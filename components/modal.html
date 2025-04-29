@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <title>政大高教深耕計畫專案管考平台</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="政大高教深耕計畫專案管考平台,政大,高等教育,政大高教深耕計畫">
+    <meta name="description" content="政大高教深耕計畫專案管考平台" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta property="og:site_name" content="政大高教深耕計畫專案管考平台" />
+    <meta property="og:image" content="../assets/images/fb-img.png" />
+    <!--分享設定-->
+    <link rel="icon" href="../assets/images/favicon.png">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="../assets/vendor/bootstrap-5.3.3/dist/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="../assets/vendor/fontawesome-free-6.5.2-web/css/all.min.css">
+    <!-- 自訂 -->
+    <link rel="stylesheet" href="../assets/style/main.css">
+    <link rel="stylesheet-disabled" href="../assets/style/login.css">
+    <!-- flatpickr -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/zh.js"></script>
+    <!-- script 開始 -->
+    <script src="../assets/js/jquery-3.7.1.min.js"></script>
+    <script src="../assets/js/bootstrap.bundle.js"></script>
+    <script src="../assets/js/jquery-ui.js"></script>
+    <script src="../assets/js/echarts.js"></script><!--圖表-->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script><!--圖表-->
+    <script src="../assets/js/footable.js"></script><!--圖表-->
+    <script src="../assets/js/script.js"></script><!--自訂-->
+    <!-- script 結束 -->
+
+</head>
+    <body>
+        <div class="container py-5">
+            <p class=""><i class="fa-solid fa-circle-chevron-left"></i> <a href="../_components.html" class="text-body">回元件表</a></p>
+            <div class="bg-white rounded-3 my-5">
+                      <h4 class="p-5 border-bottom">跳窗</h4>
+      <div class="p-5">
+        <div class="d-grid gap-5">
+            <div class="item">
+                <button class="btn btn-warning | btn-min-width" data-bs-toggle="modal" data-bs-target="#dataHistoryImport">轉入歷史計畫</button>
+                <button class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#deleteAlertModal"><i class="fa-solid fa-trash-can fa-fw"></i>刪除</button>
+            </div>
+        </div>
+        
+      </div>
+
+      
+ 
+  <!-- Modal -->
+  <!-- Modal 資料歷史轉入 -->
+  <div class="modal fade" id="dataHistoryImport" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="dataHistoryImportLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-4" id="dataHistoryImportLabel">資料歷史轉入</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <table class="table table-bordered mb-0 table-blue-light table-rwd" data-style="multi">
+                <tbody>
+                    <tr>
+                        <th class="nowrap">計畫年度</th>
+                        <td data-th="計畫年度">
+                            <select name="" id="" class="form-select w-auto">
+                                <option value="">請選擇年度計畫</option>
+                            </select>
+                        </td>
+                        <th class="nowrap">執行單位</th>
+                        <td data-th="執行單位">
+                            <div class="flex-item-wrap">
+                                <select name="" id="" class="form-select w-auto">
+                                    <option value="">請選擇</option>
+                                </select>
+                                <select name="" id="" class="form-select w-auto">
+                                    <option value="">請選擇</option>
+                                </select>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>策劃主持人</th>
+                        <td colspan="3" data-th="策劃主持人">
+                            <div class="flex-item-wrap">
+                                <select name="" id="" class="form-select w-auto">
+                                    <option value="">請選擇所屬單位</option>
+                                </select>
+                                <select name="" id="" class="form-select w-auto">
+                                    <option value="">請選擇人員</option>
+                                </select>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>計劃名稱</th>
+                        <td colspan="3" data-th="計劃名稱">
+                            <input type="text" class="form-control" placeholder="請輸入計劃名稱">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="text-end mt-3 mb-4">
+              <button class="btn btn-primary btn-min-width">查詢</button>
+            </div>
+            <table class="table table-bordered table-striped table-outlineX mb-0 text-center table-rwd">
+                <thead>
+                    <tr>
+                        <th>序</th>
+                        <th>年度</th>
+                        <th>計畫編號</th>
+                        <th>計畫名稱</th>
+                        <th>執行單位</th>
+                        <th>計畫主持人</th>
+                        <th>功能</th>
+                    </tr>
+                </thead>
+                <tbody data-title-align="right">
+                    <tr>
+                        <td data-th="序">1</td>
+                        <td data-th="年度">113</td>
+                        <td data-th="計畫編號">113H111-AA</td>
+                        <td data-th="計畫名稱" class="text-start">計劃名稱計劃名稱計劃名稱 計劃名稱計劃名稱</td>
+                        <td data-th="執行單位">電算中心</td>
+                        <td data-th="計畫主持人">林歐豪</td>
+                        <td data-th="功能"><button class="btn btn-outline-primary"><i class="fa-regular fa-copy"></i>複製</button>
+            </td>
+                    </tr>
+                    <tr>
+                        <td data-th="序">1</td>
+                        <td data-th="年度">113</td>
+                        <td data-th="計畫編號">113H111-AA</td>
+                        <td data-th="計畫名稱" class="text-start">計劃名稱計劃名稱計劃名稱 計劃名稱計劃名稱</td>
+                        <td data-th="執行單位">電算中心</td>
+                        <td data-th="計畫主持人">林歐豪</td>
+                        <td data-th="功能"><button class="btn btn-outline-primary"><i class="fa-regular fa-copy"></i>複製</button>
+            </td>
+                    </tr>
+                    <tr>
+                        <td data-th="序">1</td>
+                        <td data-th="年度">113</td>
+                        <td data-th="計畫編號">113H111-AA</td>
+                        <td data-th="計畫名稱" class="text-start">計劃名稱計劃名稱計劃名稱 計劃名稱計劃名稱</td>
+                        <td data-th="執行單位">電算中心</td>
+                        <td data-th="計畫主持人">林歐豪</td>
+                        <td data-th="功能"><button class="btn btn-outline-primary"><i class="fa-regular fa-copy"></i>複製</button>
+            </td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div class="flex-start-end mt-3">
+                <!-- Start -->
+                <div class="start">
+                    <ul class="pagination mb-0">
+                        <li class="page-item">
+                            <a class="page-link" href="#" aria-label="First">
+                                <span class="icon" aria-hidden="true"><i class="fa-solid fa-angles-left"></i></span>
+                            </a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Previous">
+                                <span class="icon" aria-hidden="true"><i class="fa-solid fa-angle-left"></i></span>
+                            </a>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item active"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Next">
+                                <span class="icon" aria-hidden="true"><i class="fa-solid fa-angle-right"></i></span>
+                            </a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Last">
+                                <span class="icon" aria-hidden="true"><i class="fa-solid fa-angles-right"></i></span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- End -->
+                <div class="end">
+                    <div class="hstack gap-2">
+                        共 120筆，每頁顯示
+                        <input type="text" class="form-control | py-0 text-center w-auto" value="10" size="2">
+                        筆
+                    </div>
+                </div>
+            </div>        </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary | btn-min-width" data-bs-dismiss="modal">關閉</button>
+          </div>
+        </div>
+      </div>
+  </div>
+  <!-- Modal 是否確認刪除 -->
+  <div class="modal fade" id="deleteAlertModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="deleteAlertModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div class=" d-grid gap-2 text-center">
+              <div class="warning-icon | text-danger">
+                <i class="fa-solid fa-circle-exclamation"></i>
+              </div>
+              <p class="fs-5">是否確定刪除？</p>
+            </div>
+          </div>
+          <div class="modal-footer justify-content-center">
+            <button class="btn btn-danger | btn-min-width">刪除</button>
+            <button class="btn btn-secondary | btn-min-width" data-bs-dismiss="modal">取消</button>
+          </div>
+        </div>
+      </div>
+  </div>
+  <!-- JS -->
+  
+</body>
+
+</html>
+            </div>
+        </div>
+    </body>
+</html>

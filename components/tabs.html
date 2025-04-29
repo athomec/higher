@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <title>政大高教深耕計畫專案管考平台</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="政大高教深耕計畫專案管考平台,政大,高等教育,政大高教深耕計畫">
+    <meta name="description" content="政大高教深耕計畫專案管考平台" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta property="og:site_name" content="政大高教深耕計畫專案管考平台" />
+    <meta property="og:image" content="../assets/images/fb-img.png" />
+    <!--分享設定-->
+    <link rel="icon" href="../assets/images/favicon.png">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="../assets/vendor/bootstrap-5.3.3/dist/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="../assets/vendor/fontawesome-free-6.5.2-web/css/all.min.css">
+    <!-- 自訂 -->
+    <link rel="stylesheet" href="../assets/style/main.css">
+    <link rel="stylesheet-disabled" href="../assets/style/login.css">
+    <!-- flatpickr -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/zh.js"></script>
+    <!-- script 開始 -->
+    <script src="../assets/js/jquery-3.7.1.min.js"></script>
+    <script src="../assets/js/bootstrap.bundle.js"></script>
+    <script src="../assets/js/jquery-ui.js"></script>
+    <script src="../assets/js/echarts.js"></script><!--圖表-->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script><!--圖表-->
+    <script src="../assets/js/footable.js"></script><!--圖表-->
+    <script src="../assets/js/script.js"></script><!--自訂-->
+    <!-- script 結束 -->
+
+</head>
+    <body>
+        <div class="container py-5">
+            <p class=""><i class="fa-solid fa-circle-chevron-left"></i> <a href="../_components.html" class="text-body">回元件表</a></p>
+            <div class="bg-white rounded-3 my-5">
+                
+<h4 class="p-5 border-bottom">頁籤</h4>
+<div class="p-5">
+
+  <div class="nav-tabs-wrapper">
+    <ul class="nav nav-tabs nav-fill scroll" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#tab-1" type="button" role="tab"
+          aria-controls="tab-1" aria-selected="true">計畫基本資料*</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-2" type="button" role="tab"
+          aria-controls="tab-1" aria-selected="true">計畫提案內容*</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-3" type="button" role="tab"
+          aria-controls="tab-1" aria-selected="true">經費概算*</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-4" type="button" role="tab"
+          aria-controls="tab-1" aria-selected="true">員額規劃*</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-5" type="button" role="tab"
+          aria-controls="tab-1" aria-selected="true">計畫工作面向</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-6" type="button" role="tab"
+          aria-controls="tab-1" aria-selected="true">預算期程規劃*</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-7" type="button" role="tab"
+          aria-controls="tab-1" aria-selected="true">審查歷程</button>
+      </li>
+    </ul>
+    <div class="tab-content">
+      <!-- 計畫基本資料 -->
+      <div class="tab-pane fade show active" id="tab-1" role="tabpanel" tabindex="0">
+        <!-- Block bar -->
+        <div class="block-bar">
+          <!-- Start -->
+          <div class="start">
+            <h6 class="block-bar-title">計畫基本資料</h6>
+          </div>
+          <!-- End -->
+          <div class="end"></div>
+        </div>
+        <!-- 表格 -->
+        <table class="table table-bordered mb-0 table-blue-light table-rwd" data-style="multi">
+          <tbody>
+            <tr>
+              <th width="18%">計畫年度</th>
+              <td data-th="計畫年度">14</td>
+              <th width="18%">提案日期</th>
+              <td data-th="提案日期">113/10/10</td>
+            </tr>
+            <tr>
+              <th><span class="text-danger">*</span>計畫類型</th>
+              <td colspan="3" data-th="計畫類型" data-require="true">
+                <div class="flex-item-wrap">
+                  <select class="form-select w-auto">
+                    <option value="">請選擇計畫類型</option>
+                    <option selected="" value="延續型計畫">延續型計畫</option>
+                    <option value="新建立計畫">新建立計畫</option>
+                  </select>
+                  <button class="btn btn-warning btn-min-width" data-bs-toggle="modal"
+                    data-bs-target="#dataHistoryImport">轉入歷史計畫</button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <th>計畫編號</th>
+              <td colspan="3" data-th="計畫編號">
+                <input type="text" class="form-control w-100" value="ABCGDM-123456789" disabled
+                  style="max-width: 375px;">
+              </td>
+            </tr>
+            <tr>
+              <th><span class="text-danger">*</span>執行單位</th>
+              <td colspan="3" data-th="執行單位" data-require="true">
+                <select class="form-select w-auto">
+                  <option value="">請選擇</option>
+                  <option value="工學院">工學院</option>
+                  <option value="文學院">文學院</option>
+                  <option selected="" value="教務處">教務處</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <th><span class="text-danger">*</span>計畫名稱</th>
+              <td colspan="3" data-th="計畫名稱" data-require="true">
+                <div class="col-xl-8 col-xxl-5">
+                  <input type="text" class="form-control" value="計畫名稱計畫名稱計畫名稱計畫名稱">
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <th><span class="text-danger">*</span>計畫主持人</th>
+              <td colspan="3" data-th="計畫主持人" data-require="true">
+                <div class="flex-item-wrap">
+                  <select class="form-select w-auto">
+                    <option value="">請選擇</option>
+                    <option value="工學院">工學院</option>
+                    <option value="文學院">文學院</option>
+                    <option selected="" value="教務處">教務處</option>
+                  </select>
+                  <select class="form-select w-auto">
+                    <option value="">請選擇人員</option>
+                    <option selected="" value="林O豪">林O豪</option>
+                  </select>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <th><span class="text-danger nowrap">*</span>計畫人員設定</th>
+              <td colspan="3" data-th="計畫人員設定" data-require="true">
+                <div class="flex-item-wrap mb-3">
+                  新增計畫人員
+                  <select class="form-select w-auto">
+                    <option value="">請選擇所屬單位</option>
+                  </select>
+                  <select class="form-select w-auto">
+                    <option value="">請選擇欲新增人員</option>
+                  </select>
+                  <button class="btn btn-primary btn-min-width">新增人員</button>
+                </div>
+                <table class="table table-bordered table-striped table-outlineX mb-0 text-center footable nowrap"
+                  data-sorting="true" data-toggle-column="first">
+                  <thead>
+                    <tr>
+                      <!-- 排序狀態: 無排序 -->
+                      <th class="tablesort-header" width="22%">
+                        <div class="tablesort-header-inner">計畫人員</div>
+                      </th>
+                      <!-- 排序狀態: 上升 -->
+                      <th class="tablesort-header" data-breakpoints="md" width="22%">
+                        <div class="tablesort-header-inner">計畫承辦人</div>
+                      </th>
+                      <!-- 排序狀態: 下降 -->
+                      <th class="tablesort-header" data-breakpoints="xs sm md" width="22%">
+                        <div class="tablesort-header-inner">計畫人事負責人</div>
+                      </th>
+                      <!-- 排序狀態: 無排序 -->
+                      <th class="tablesort-header" data-breakpoints="xs sm md lg" width="22%">
+                        <div class="tablesort-header-inner">計畫經費負責人</div>
+                      </th>
+                      <th width="12%" data-breakpoints="xs sm md lg">功能</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>王曉明</td>
+                      <td><input type="checkbox" class="form-check-input" checked></td>
+                      <td><input type="checkbox" class="form-check-input" checked></td>
+                      <td><input type="checkbox" class="form-check-input" checked></td>
+                      <td><button class="btn btn-outline-danger" data-bs-toggle="modal"
+                          data-bs-target="#deleteAlertModal"><i class="fa-solid fa-trash-can fa-fw"></i>刪除</button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>王曉明</td>
+                      <td><input type="checkbox" class="form-check-input" checked></td>
+                      <td><input type="checkbox" class="form-check-input" checked></td>
+                      <td><input type="checkbox" class="form-check-input" checked></td>
+                      <td><button class="btn btn-outline-danger" data-bs-toggle="modal"
+                          data-bs-target="#deleteAlertModal"><i class="fa-solid fa-trash-can fa-fw"></i>刪除</button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>王曉明</td>
+                      <td><input type="checkbox" class="form-check-input" checked></td>
+                      <td><input type="checkbox" class="form-check-input" checked></td>
+                      <td><input type="checkbox" class="form-check-input" checked></td>
+                      <td><button class="btn btn-outline-danger" data-bs-toggle="modal"
+                          data-bs-target="#deleteAlertModal"><i class="fa-solid fa-trash-can fa-fw"></i>刪除</button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <th>上傳簽呈</th>
+              <td colspan="3" data-th="上傳簽呈">
+                <div class="container">
+                  <div class="row mb-3">
+                    <div class="col-sm-6">
+                      <label for="file-upload-A" class="btn btn-blue w-100">
+                        <i class="fa-solid fa-cloud-arrow-up"></i>
+                        選擇檔案
+                      </label>
+                      <input type="file" id="file-upload-A" hidden>
+                    </div>
+                  </div>
+                </div>
+                <ul class="text-primary notice">
+                  <li>若計畫類型為「新建計畫」，須上傳公文簽呈檔案才可寄簽。</li>
+                  <li>文件類型為PDF、ZIP，大小限制為10MB。</li>
+      </div>
+      </td>
+      </tr>
+      </tbody>
+      </table>
+      <!-- CTA group -->
+      <div class="cta-group ">
+        <button class="btn btn-primary btn-min-width">儲存</button>
+        <button class="btn btn-dark btn-min-width">匯出</button>
+      </div>
+      <div class="small text-center text-grey mt-2">變更人員：113-10-15 22:23:18 / 教務處 林O豪</div>
+    </div>
+    <!-- 計畫提案內容 -->
+    <div class="tab-pane fade" id="tab-2" role="tabpanel" tabindex="0">
+      <div class="d-grid gap-4">
+        <!-- Item -->
+        <div class="item">
+          <!-- Block bar + collapse -->
+          <div class="block-bar">
+            <!-- Start -->
+            <div class="start">
+              <h6 class="block-bar-title">來年提案 計劃提案摘要</h6>
+            </div>
+            <!-- End -->
+            <div class="end">
+              <!-- Collapse icon -->
+              <a href="#aaCollapse" class="collapse-icon stretched-link" data-bs-toggle="collapse" aria-expanded="true">
+                <span class="expanded-false"><i class="fa-solid fa-circle-plus"></i></span>
+                <span class="expanded-true opacity-75"><i class="fa-solid fa-circle-minus"></i></span>
+              </a>
+            </div>
+          </div>
+          <!-- Collapse -->
+          <div class="collapse show" id="aaCollapse">
+            <div class="block rounded-0 px-4 py-3">
+              <div class="d-grid gap-3">
+                <div class="item">
+                  <label for="" class="form-label">方案設計關鍵字</label>
+                  <input type="text" class="form-control" placeholder="方案設計關鍵字">
+                </div>
+                <div class="item">
+                  <label for="" class="form-label">方案摘要</label>
+                  <textarea name="" id="" class="form-control" placeholder="請用200字以內，或可搭配關鍵字，來說明明年的計畫"></textarea>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Item -->
+        <div class="item">
+          <!-- Block bar + collapse -->
+          <div class="block-bar">
+            <!-- Start -->
+            <div class="start flex-wrap">
+              <h6 class="block-bar-title">目標推動績效-自動化指標 </h6>
+              <small>結果、關鍵績效與故事設計—量化指標</small>
+            </div>
+            <!-- End -->
+            <div class="end">
+              <!-- Tooltip -->
+              <span class="position-relative z-2">
+                <a href="#" class="text-yellow fs-4" data-bs-toggle="tooltip" data-bs-html="true"
+                  data-bs-custom-class="text-start" data-bs-title="
+                                         1. 質化指標：例如帶來的效益、解決了哪些問題、突破了那些框架或障礙，通常是比較質化的描述。<br/>
+                                         2. 亮點故事：可能是有哪些更大的影響或故事，能夠引人記憶，感受到這各計畫存在的明顯價值。">
+                  <span><i class="fa-solid fa-circle-question"></i></span>
+                </a>
+              </span>
+              <!-- Collapse icon -->
+              <a href="#abCollapse" class="collapse-icon stretched-link" data-bs-toggle="collapse" aria-expanded="true">
+                <span class="expanded-false"><i class="fa-solid fa-circle-plus"></i></span>
+                <span class="expanded-true opacity-75"><i class="fa-solid fa-circle-minus"></i></span>
+              </a>
+            </div>
+          </div>
+          <!-- Collapse -->
+          <div class="collapse show" id="abCollapse">
+            <table class="table table-bordered table-striped table-blue-light mb-0 text-center footable"
+              data-sorting="flase" data-toggle-column="last">
+              <thead>
+                <tr>
+                  <th>序</th>
+                  <th>指標項目</th>
+                  <th data-breakpoints="xs sm md">數量</th>
+                  <th data-breakpoints="xs sm">功能</th>
+                </tr>
+              </thead>
+              <tbody data-title-align="right" ata-con="form">
+                <tr>
+                  <td data-th="序">1</td>
+                  <td data-th="指標項目">人次</td>
+                  <td data-th="數量">1</td>
+                  <td data-th="功能">
+                    <div class="flex-item-wrap justify-content-center">
+                      <button class="btn btn-outline-success"><i class="fa-solid fa-pen-to-square fa-fw"></i>編輯</button>
+                      <button class="btn btn-outline-danger"><i class="fa-solid fa-trash-can fa-fw"></i>刪除</button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td data-th="序">2</td>
+                  <td data-th="指標項目">
+                    <select class="form-select">
+                      <option value="">請選擇指標項目</option>
+                      <option value="人次">人次</option>
+                      <option selected="" value="篇數">篇數</option>
+                      <option value="專利數">專利數</option>
+                      <option value="獎項數">獎項數</option>
+                      <option value="畢業人數">畢業人數</option>
+                      <option value="排名">排名</option>
+                    </select>
+                  </td>
+                  <td data-th="數量">
+                    <input type="text" class="form-control text-center" value="2" placeholder="請輸入">
+                  </td>
+                  <td data-th="功能">
+                    <div class="flex-item-wrap justify-content-center">
+                      <button class="btn btn-outline-warning"><i class="fa-solid fa-lock fa-fw"></i>鎖定</button>
+                      <button class="btn btn-outline-secondary"><i class="fa-solid fa-xmark fa-fw"></i>取消</button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td data-th="序">3</td>
+                  <td data-th="指標項目">
+                    <select class="form-select">
+                      <option value="">請選擇指標項目</option>
+                      <option value="人次">人次</option>
+                      <option value="篇數">篇數</option>
+                      <option value="專利數">專利數</option>
+                      <option value="獎項數">獎項數</option>
+                      <option value="畢業人數">畢業人數</option>
+                      <option value="排名">排名</option>
+                    </select>
+                  </td>
+                  <td data-th="數量">
+                    <input type="text" class="form-control text-center" value="" placeholder="請輸入">
+                  </td>
+                  <td data-th="功能">
+                    <div class="flex-item-wrap justify-content-center">
+                      <button class="btn btn-outline-primary"><i class="fa-solid fa-plus fa-fw"></i>新增</button>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <!-- Item -->
+        <div class="item">
+          <!-- Block bar + collapse -->
+          <div class="block-bar">
+            <!-- Start -->
+            <div class="start flex-wrap">
+              <h6 class="block-bar-title">預期推進成效-質化指標 </h6>
+              <small>結果、關鍵績效與故事設計—定性指標</small>
+            </div>
+            <!-- End -->
+            <div class="end">
+              <!-- Collapse icon -->
+              <a href="#acCollapse" class="collapse-icon stretched-link" data-bs-toggle="collapse" aria-expanded="true">
+                <span class="expanded-false"><i class="fa-solid fa-circle-plus"></i></span>
+                <span class="expanded-true opacity-75"><i class="fa-solid fa-circle-minus"></i></span>
+              </a>
+            </div>
+          </div>
+          <!-- Collapse -->
+          <div class="collapse show" id="acCollapse">
+            fff
+          </div>
+        </div>
+      </div>
+      <!-- CTA group -->
+      <div class="cta-group ">
+        <button class="btn btn-primary btn-min-width">儲存</button>
+        <button class="btn btn-dark btn-min-width">匯出</button>
+      </div>
+      <div class="small text-center text-grey mt-2">變更人員：113-10-15 22:23:18 / 教務處 林O豪</div>
+    </div>
+    <!-- 經費概算 -->
+    <div class="tab-pane fade" id="tab-3" role="tabpanel" tabindex="0">
+      <!-- nav-pills -->
+      <ul class="nav nav-pills mb-3">
+        <li class="nav-item">
+          <a class="nav-link active" href="#">經常門</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">資本門</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">行政管理費</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">G帳</a>
+        </li>
+      </ul>
+      <div class="d-grid gap-4">
+        <!-- Item -->
+        <div class="item">
+          <!-- Block bar + collapse -->
+          <div class="block-bar">
+            <!-- Start -->
+            <div class="start">
+              <h6 class="block-bar-title">人事費</h6>
+            </div>
+            <!-- End -->
+            <div class="end">
+              <div class="fs-15 me-3">
+                申請金額：<span class="text-highlight fs-18 fw-bold">1,231,234</span> 元
+              </div>
+              <!-- Collapse icon -->
+              <a href="#baCollapse" class="collapse-icon stretched-link" data-bs-toggle="collapse" aria-expanded="true">
+                <span class="expanded-false"><i class="fa-solid fa-circle-plus"></i></span>
+                <span class="expanded-true opacity-75"><i class="fa-solid fa-circle-minus"></i></span>
+              </a>
+            </div>
+          </div>
+          <!-- Collapse -->
+          <div class="collapse show" id="baCollapse">
+            <table class="table table-bordered table-striped table-blue-light mb-0 text-center footable"
+              data-toggle-column="last">
+              <thead>
+                <tr>
+                  <th>序</th>
+                  <th>類別</th>
+                  <th data-breakpoints="xs sm md">人數</th>
+                  <th data-breakpoints="xs sm md lg">聘用起日</th>
+                  <th data-breakpoints="xs sm md lg">聘用迄日</th>
+                  <th data-breakpoints="xs sm md lg xl">薪資(元)</th>
+                  <th>金額(元)</th>
+                  <th data-breakpoints="xs sm md lg xl" width="190">備註</th>
+                  <th data-breakpoints="xs sm md lg xl">功能</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td class="text-start">專任博士級(後)研究人員</td>
+                  <td>10</td>
+                  <td>113/10</td>
+                  <td>113/10</td>
+                  <td>40,000 ~ 45,000</td>
+                  <td>500,000</td>
+                  <td class="text-start">備註內容備註內容備註內容內容備註</td>
+                  <td>
+                    <div class="flex-item-wrap justify-content-center">
+                      <button class="btn btn-outline-success"><i class="fa-solid fa-pen-to-square fa-fw"></i>編輯</button>
+                      <button class="btn btn-outline-danger"><i class="fa-solid fa-trash-can fa-fw"></i>刪除</button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td class="text-start">
+                    <select class="form-select" disabled>
+                      <option value="請選擇">請選擇</option>
+                      <option value="專任約聘教師">專任約聘教師</option>
+                      <option value="兼任教師">兼任教師</option>
+                      <option value="專任約聘研究人員">專任約聘研究人員</option>
+                      <option value="專任博士及(後)研究人員">專任博士及(後)研究人員</option>
+                      <option value="專任助理">專任助理</option>
+                      <option value="勞動型兼任助理">勞動型兼任助理</option>
+                      <option value="教學助理">教學助理</option>
+                      <option selected value="定期約用(原頂大延聘人員)">定期約用(原頂大延聘人員)</option>
+                      <option value="其它">其它</option>
+                    </select>
+                  </td>
+                  <td><input type="text" class="form-control text-center" value="1"></td>
+                  <td><input type="text" class="form-control date" value="113/10" placeholder="年/月"></td>
+                  <td><input type="text" class="form-control date" value="113/10" placeholder="年/月"></td>
+                  <td>
+                    <div class="hstack gap-1">
+                      <input type="text" class="form-control w-auto" size="2" value="40,000">
+                      ~
+                      <input type="text" class="form-control w-auto" size="2" value="45,000">
+                    </div>
+                  </td>
+                  <td><input type="text" class="form-control w-auto" size="3" value="500,000">
+                  </td>
+                  <td class="text-start">
+                    <textarea name="" id="" class="form-control">備註內容備註內容備註內容內容備註</textarea>
+                  </td>
+                  <td>
+                    <div class="flex-item-wrap justify-content-center">
+                      <button class="btn btn-outline-warning"><i class="fa-solid fa-lock fa-fw"></i>鎖定</button>
+                      <button class="btn btn-outline-secondary"><i class="fa-solid fa-xmark fa-fw"></i>取消</button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td class="text-start">
+                    <select class="form-select">
+                      <option value="請選擇">請選擇</option>
+                      <option value="專任約聘教師">專任約聘教師</option>
+                      <option value="兼任教師">兼任教師</option>
+                      <option value="專任約聘研究人員">專任約聘研究人員</option>
+                      <option value="專任博士及(後)研究人員">專任博士及(後)研究人員</option>
+                      <option value="專任助理">專任助理</option>
+                      <option value="勞動型兼任助理">勞動型兼任助理</option>
+                      <option value="教學助理">教學助理</option>
+                      <option value="定期約用(原頂大延聘人員)">定期約用(原頂大延聘人員)</option>
+                      <option value="其它">其它</option>
+                    </select>
+                  </td>
+                  <td><input type="text" class="form-control text-center" value="1"></td>
+                  <td><input type="text" class="form-control date" value="113/10" placeholder="年/月"></td>
+                  <td><input type="text" class="form-control date" value="113/10" placeholder="年/月"></td>
+                  <td>
+                    <div class="hstack gap-1">
+                      <input type="text" class="form-control w-auto" size="2" value="40,000">
+                      ~
+                      <input type="text" class="form-control w-auto" size="2" value="45,000">
+                    </div>
+                  </td>
+                  <td><input type="text" class="form-control w-auto" size="3" value="500,000">
+                  </td>
+                  <td class="text-start">
+                    <textarea name="" id="" class="form-control">備註內容備註內容備註內容內容備註</textarea>
+                  </td>
+                  <td>
+                    <div class="flex-item-wrap justify-content-center">
+                      <button class="btn btn-outline-warning"><i class="fa-solid fa-lock fa-fw"></i>鎖定</button>
+                      <button class="btn btn-outline-secondary"><i class="fa-solid fa-xmark fa-fw"></i>取消</button>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="block rounded-0 p-3 text-body">
+              <ul class="notice mb-0">
+                <li>人事費編列金額皆含勞保費、勞保費、年終獎金及補充保費。</li>
+                <li>薪資位欄請填寫各類別薪資月度。</li>
+                <li>專任博士級(後)研究人員、專任助理、定期約用(原頂大延聘人員)加總不得超過專職人力上限。</li>
+                <li>若類別選項與計畫不符，請選擇「其他」自行輸入。</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- Item -->
+        <div class="item">
+          <!-- Block bar + collapse -->
+          <div class="block-bar">
+            <!-- Start -->
+            <div class="start">
+              <h6 class="block-bar-title">業務費1</h6>
+            </div>
+            <!-- End -->
+            <div class="end">
+              <div class="fs-15 me-3">
+                申請金額：<span class="text-highlight fs-18 fw-bold">1,231,234</span> 元
+              </div>
+              <!-- Collapse icon -->
+              <a href="#bbCollapse" class="collapse-icon stretched-link" data-bs-toggle="collapse" aria-expanded="true">
+                <span class="expanded-false"><i class="fa-solid fa-circle-plus"></i></span>
+                <span class="expanded-true opacity-75"><i class="fa-solid fa-circle-minus"></i></span>
+              </a>
+            </div>
+          </div>
+          <!-- Collapse -->
+          <div class="collapse show" id="bbCollapse">
+            fff
+          </div>
+        </div>
+      </div>
+      <!-- CTA group -->
+      <div class="cta-group ">
+        <button class="btn btn-primary btn-min-width">儲存</button>
+        <button class="btn btn-dark btn-min-width">匯出</button>
+      </div>
+      <div class="small text-center text-grey mt-2">變更人員：113-10-15 22:23:18 / 教務處 林O豪</div>
+    </div>
+    <!-- 員額規劃 -->
+    <div class="tab-pane fade" id="tab-4" role="tabpanel" tabindex="0">
+      <!-- Block bar -->
+      <div class="block-bar">
+        <!-- Start -->
+        <div class="start">
+          <h6 class="block-bar-title">員規劃額</h6>
+        </div>
+        <!-- End -->
+        <div class="end"></div>
+      </div>
+      <!-- 表格 -->
+      <div class="table-responsive scroll">
+        <table class="table table-bordered table-blue-light mb-0" style="min-width: 630px;">
+          <thead>
+            <tr>
+              <th colspan="2">員額項目</th>
+              <th>人數</th>
+              <th data-breakpoints="xs sm md">屬OOO年續聘人數</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="text-center" colspan="2">專任約聘教師</td>
+              <td class="text-center">1</td>
+              <td class="text-center"><input type="text" class="form-control text-center" value="1"></td>
+            </tr>
+            <tr class="table-grey-light-darken">
+              <td class="text-center" colspan="2">兼任教師</td>
+              <td class="text-center">0</td>
+              <td class="text-center"><input type="text" class="form-control text-center" value="0"></td>
+            </tr>
+            <tr>
+              <td class="text-center" rowspan="2">專任研究者</td>
+              <td class="text-center">約聘</td>
+              <td class="text-center">0</td>
+              <td class="text-center"><input type="text" class="form-control text-center" value="0"></td>
+            </tr>
+            <tr>
+              <td class="text-center">博士級(後）</td>
+              <td class="text-center">0</td>
+              <td class="text-center"><input type="text" class="form-control text-center" value="0"></td>
+            </tr>
+            <tr class="table-grey-light-darken">
+              <td class="text-center" rowspan="4">助理</td>
+              <td class="text-center">定期約用(原頂大延僱用人員）</td>
+              <td class="text-center">0</td>
+              <td class="text-center"><input type="text" class="form-control text-center" value="0"></td>
+            </tr>
+            <tr class="table-grey-light-darken">
+              <td class="text-center">專任</td>
+              <td class="text-center">0</td>
+              <td class="text-center"><input type="text" class="form-control text-center" value="0"></td>
+            </tr>
+            <tr class="table-grey-light-darken">
+              <td class="text-center">勞動型兼任</td>
+              <td class="text-center">0</td>
+              <td class="text-center"><input type="text" class="form-control text-center" value="0"></td>
+            </tr>
+            <tr class="table-grey-light-darken">
+              <td class="text-center">教學助理</td>
+              <td class="text-center">5</td>
+              <td class="text-center"><input type="text" class="form-control text-center" value="4"></td>
+            </tr>
+            <tr>
+              <td class="text-center">獎助生</td>
+              <td class="text-center">研究獎助生</td>
+              <td class="text-center">0</td>
+              <td class="text-center"><input type="text" class="form-control text-center" value="0"></td>
+            </tr>
+            <tr class="table-teal-light">
+              <td class="text-center" colspan="2">兼任教師</td>
+              <td class="text-center">6</td>
+              <td class="text-center">5</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- CTA group -->
+      <div class="cta-group ">
+        <button class="btn btn-primary btn-min-width">儲存</button>
+        <button class="btn btn-dark btn-min-width">匯出</button>
+      </div>
+      <div class="small text-center text-grey mt-2">變更人員：113-10-15 22:23:18 / 教務處 林O豪</div>
+    </div>
+    <!-- 計畫工作面向 -->
+    <div class="tab-pane fade" id="tab-5" role="tabpanel" tabindex="0">...</div>
+    <!-- 預算期程規劃 -->
+    <div class="tab-pane fade" id="tab-6" role="tabpanel" tabindex="0">
+      <div class="">
+        <!-- Item -->
+        <div class="block-bar">
+          <!-- Start -->
+          <div class="start">
+            <h6 class="block-bar-title">金額統計</h6>
+          </div>
+          <!-- End -->
+          <div class="end"></div>
+        </div>
+        <!-- 表格 -->
+        <div class="table-responsive scroll mb-4">
+          <table class="table table-bordered table-striped mb-0 table-blue-light" style="min-width: 630px;">
+            <thead>
+              <tr>
+                <th rowspan="2"></th>
+                <th rowspan="2">業務費1</th>
+                <th rowspan="2">業務費2</th>
+                <th colspan="2">國外差旅費</th>
+                <th colspan="2">資本門</th>
+              </tr>
+              <tr>
+                <th>國外獎助學金</th>
+                <th>其他</th>
+                <th>圖書儀器<br />電腦設備</th>
+                <th>教學相關<br>校舍修繕</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th>預算金額</th>
+                <td>100</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>100</td>
+                <td>200</td>
+              </tr>
+              <tr>
+                <th>已核銷</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <th>核銷中</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!-- Block bar -->
+        <div class="block-bar">
+          <!-- Start -->
+          <div class="start">
+            <h6 class="block-bar-title">期規劃規劃</h6>
+          </div>
+          <!-- End -->
+          <div class="end"></div>
+        </div>
+        <!-- 表格 -->
+        <div class="table-responsive scroll">
+          <table class="table table-bordered table-striped mb-0 table-blue-light text-center"
+            style="min-width: 1100px;">
+            <thead>
+              <tr>
+                <th rowspan="3">序</th>
+                <th rowspan="3">舉辦日期</th>
+                <th rowspan="3">活動性質/名稱</th>
+                <th colspan="7">規劃</th>
+                <th rowspan="3">功能</th>
+              </tr>
+              <tr>
+                <th rowspan="2">業務費1</th>
+                <th rowspan="2">業務費2</th>
+                <th colspan="2">國外差旅費</th>
+                <th colspan="2">資本門</th>
+                <th rowspan="2">總共</th>
+              </tr>
+              <tr>
+                <th>國外<br />獎助學金</th>
+                <th>其他</th>
+                <th>圖書儀器<br />電腦裝置</th>
+                <th>教學相關<br />校舍修撤</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>113/09</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>40,000</td>
+                <td>
+                  <div class="flex-item-wrap justify-content-center">
+                    <button class="btn btn-outline-success"><i class="fa-solid fa-pen-to-square fa-fw"></i>編輯</button>
+                    <button class="btn btn-outline-danger"><i class="fa-solid fa-trash-can fa-fw"></i>刪除</button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td><input type="text" class="form-control date" value="" placeholder="年/月"></td>
+                <td><input type="text" class="form-control" placeholder="輸入名稱"></td>
+                <td><input type="text" class="form-control" placeholder="輸入名稱"></td>
+                <td><input type="text" class="form-control" placeholder="輸入名稱"></td>
+                <td><input type="text" class="form-control" placeholder="輸入名稱"></td>
+                <td><input type="text" class="form-control" placeholder="輸入名稱"></td>
+                <td><input type="text" class="form-control" placeholder="輸入名稱"></td>
+                <td><input type="text" class="form-control" placeholder="輸入名稱"></td>
+                <td></td>
+                <td>
+                  <div class="flex-item-wrap justify-content-center">
+                    <button class="btn btn-outline-primary"><i class="fa-solid fa-plus fa-fw"></i>新增</button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <ul class=" notice text-primary mt-2">
+          <li>業務費1、業務費2、國外差旅費、圖書儀器電腦設備、教學相關校舍修改提取五個欄位，金額需與實際概算表一致。</li>
+        </ul>
+      </div>
+      <!-- CTA group -->
+      <div class="cta-group ">
+        <button class="btn btn-primary btn-min-width">儲存</button>
+        <button class="btn btn-dark btn-min-width">匯出</button>
+      </div>
+      <div class="small text-center text-grey mt-2">變更人員：113-10-15 22:23:18 / 教務處 林O豪</div>
+    </div>
+    <!-- 審查歷程 -->
+    <div class="tab-pane fade" id="tab-7" role="tabpanel" tabindex="0">...</div>
+  </div>
+</div>
+<script>
+  $(function () {
+    $('.footable').footable();
+  });
+</script>
+            </div>
+        </div>
+    </body>
+</html>

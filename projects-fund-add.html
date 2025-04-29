@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <title>政大高教深耕計畫專案管考平台</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="政大高教深耕計畫專案管考平台,政大,高等教育,政大高教深耕計畫">
+    <meta name="description" content="政大高教深耕計畫專案管考平台" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta property="og:site_name" content="政大高教深耕計畫專案管考平台" />
+    <meta property="og:image" content="assets/images/fb-img.png" />
+    <!--分享設定-->
+    <link rel="icon" href="assets/images/favicon.png">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="assets/vendor/bootstrap-5.3.3/dist/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="assets/vendor/fontawesome-free-6.5.2-web/css/all.min.css">
+    <!-- 自訂 -->
+    <link rel="stylesheet" href="assets/style/main.css">
+    <link rel="stylesheet-disabled" href="assets/style/login.css">
+    <!-- flatpickr -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/zh.js"></script>
+    <!-- script 開始 -->
+    <script src="assets/js/jquery-3.7.1.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.js"></script>
+    <script src="assets/js/jquery-ui.js"></script>
+    <script src="assets/js/echarts.js"></script><!--圖表-->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script><!--圖表-->
+    <script src="assets/js/footable.js"></script><!--圖表-->
+    <script src="assets/js/script.js"></script><!--自訂-->
+    <!-- script 結束 -->
+
+</head>
+
+	<body>
+		<div class="wrapper">
+			<!-- 版頭開始 -->
+			<div class="top position-fixed w-100">
+				<div class="header">
+					<h3 class="start brand-name"><a href="index.html" title="回首頁">政大高教深耕計畫<br
+								class="d-inline d-sm-none">專案管考平台</a></h3>
+					<div class="header-end hstack gap-2 gap-sm-3">
+						<div class="font-size-wrapper hstack gap-1 me-2">
+							<span class="me-1">字級</span>
+							<div class="font-size-filter">
+								<input type="radio" class="fontSize-lg" name="fontSize" id="fontSize-lg" hidden>
+								<label for="fontSize-lg">大</label>
+							</div>
+							<div class="font-size-filter">
+								<input type="radio" class="fontSize-md" name="fontSize" id="fontSize-md" hidden checked>
+								<label for="fontSize-md">中</label>
+							</div>
+							<div class="font-size-filter">
+								<input type="radio" class="fontSize-sm" name="fontSize" id="fontSize-sm" hidden>
+								<label for="fontSize-sm">小</label>
+							</div>
+						</div>
+						<div class="ms-2">XXX123，您好</div>
+						<a href="login.html" class="btn btn-outline-primary bg-white text-primary">登出</a>
+					</div>
+				</div>
+			</div>
+			<!-- 版頭結束 -->
+
+			<!-- Bottom -->
+			<div class="bottom">
+				<!-----側邊選單開始----->
+				<button class="btn btn-primary sidebar-toggler"><span>menu</span><img
+						src="./assets/images/ic-arrow-right.svg" alt="icon"></button>
+				<aside class="sidebar scroll">
+					<!-- Menu -->
+					<ul class="menu">
+						<!-- 深耕辦公室專區 -->
+						<li>
+							<a href="#" class="children ">
+								<span>
+									<i class="ic menu-office"></i>
+									<span class="text">深耕辦公室專區</span>
+								</span>
+								<span class="children-arrow">
+									<span class="expanded-false text-grey-pale"><i
+											class="fa-solid fa-circle-plus"></i></span>
+									<span class="expanded-true text-primary"><i
+											class="fa-solid fa-circle-minus"></i></span>
+								</span>
+							</a>
+							<ul class="level-2">
+								<li><a href="XXX.html">提案期程設定</a></li>
+								<li><a href="XXX.html">執行填報期程設定</a></li>
+								<li><a href="statistics.html">新年度計畫設定</a></li>
+								<li><a href="XXX.html">新年度提案審查</a></li>
+								<li><a href="XXX.html">經費執行進度審查</a></li>
+								<li><a href="XXX.html">計畫經費配置</a></li>
+								<li><a href="XXX.html">計畫成果審查</a></li>
+								<li><a href="XXX.html">計畫成員年資查詢</a></li>
+								<li><a href="XXX.html">人力續聘審查</a></li>
+								<li><a href="XXX.html">全校深耕計畫關鍵指標審查</a></li>
+								<li><a href="XXX.html">經費變更審查</a></li>
+								<li><a href="XXX.html">預算期程變更審查</a></li>
+								<li><a href="XXX.html">報表查詢</a></li>
+							</ul>
+						</li>
+						<!-- 計畫單位專區 -->
+						<li>
+							<a href="#" class="children show">
+								<span>
+									<i class="ic menu-plan"></i>
+									<span class="text">計畫單位專區</span>
+								</span>
+								<span class="children-arrow">
+									<span class="expanded-false text-grey-pale"><i
+											class="fa-solid fa-circle-plus"></i></span>
+									<span class="expanded-true text-primary"><i
+											class="fa-solid fa-circle-minus"></i></span>
+								</span>
+							</a>
+							<ul class="level-2">
+								<li><a href="projects-proposal.html" class="">計畫提案管理</a></li>
+								<li><a href="projects-fund-add.html" class="active">經費執行進度填報</a></li>
+								<li><a href="XXX.html">計畫成果填</a></li>
+								<li><a href="XXX.html">計畫成員年資確認</a></li>
+								<li><a href="XXX.html">人力續聘調查</a></li>
+								<li><a href="XXX.html">計畫經費變更</a></li>
+								<li><a href="XXX.html">預算期程變更</a></li>
+							</ul>
+						</li>
+						<!-- 人事主計專區 -->
+						<li>
+							<a href="#" class="children ">
+								<span>
+									<i class="ic menu-money"></i>
+									<span class="text">人事主計專區</span>
+								</span>
+								<span class="children-arrow">
+									<span class="expanded-false text-grey-pale"><i
+											class="fa-solid fa-circle-plus"></i></span>
+									<span class="expanded-true text-primary"><i
+											class="fa-solid fa-circle-minus"></i></span>
+								</span>
+							</a>
+							<ul class="level-2">
+								<li><a href="XXX.html">計畫經費審查</a></li>
+								<li><a href="XXX.html">計畫員額審查</a></li>
+								<li><a href="XXX.html">計畫成員年資審查</a></li>
+							</ul>
+						</li>
+						<!-- 成果指標專區 -->
+						<li>
+							<a href="#" class="children ">
+								<span>
+									<i class="ic menu-result"></i>
+									<span class="text">成果指標專區</span>
+								</span>
+								<span class="children-arrow">
+									<span class="expanded-false text-grey-pale"><i
+											class="fa-solid fa-circle-plus"></i></span>
+									<span class="expanded-true text-primary"><i
+											class="fa-solid fa-circle-minus"></i></span>
+								</span>
+							</a>
+							<ul class="level-2">
+								<li><a href="XXX.html">全校深耕計畫關鍵指標填報</a></li>
+								<li><a href="XXX.html">深耕計畫發展建議填報</a></li>
+							</ul>
+						</li>
+						<!-- 審查委員專區 -->
+						<li>
+							<a href="#" class="children ">
+								<span>
+									<i class="ic menu-member"></i>
+									<span class="text">審查委員專區</span>
+								</span>
+								<span class="children-arrow">
+									<span class="expanded-false text-grey-pale"><i
+											class="fa-solid fa-circle-plus"></i></span>
+									<span class="expanded-true text-primary"><i
+											class="fa-solid fa-circle-minus"></i></span>
+								</span>
+							</a>
+							<ul class="level-2">
+								<li><a href="XXX.html">計畫成果檢閱</a></li>
+							</ul>
+						</li>
+						<!-- 系統管理 -->
+						<li>
+							<a href="#" class="children ">
+								<span>
+									<i class="ic menu-system"></i>
+									<span class="text">系統管理</span>
+								</span>
+								<span class="children-arrow">
+									<span class="expanded-false text-grey-pale"><i
+											class="fa-solid fa-circle-plus"></i></span>
+									<span class="expanded-true text-primary"><i
+											class="fa-solid fa-circle-minus"></i></span>
+								</span>
+							</a>
+							<ul class="level-2">
+								<li><a href="XXX.html">系統公告</a></li>
+								<li><a href="XXX.html">量化及績效指標維護</a></li>
+								<li><a href="XXX.html">新舊計畫代碼關聯</a></li>
+								<li><a href="XXX.html">使用者管理</a></li>
+								<li><a href="XXX.html">角色及功能維護</a></li>
+								<li><a href="XXX.html">系統LOG紀錄</a></li>
+								<li><a href="XXX.html">使用者軌跡</a></li>
+							</ul>
+						</li>
+					</ul>
+				</aside>
+				<!-----側邊選單結束----->
+
+				<!-----主要內容開始----->
+				<main class="main ">
+						
+<div class="breadcrumb">
+    <li class="breadcrumb-item"><a href="index.html">首頁</a></li>
+    <li class="breadcrumb-item">計畫單位專區</li>
+    <li class="breadcrumb-item active" aria-current="page">經費執行進度填報</li>
+</div>
+
+<!-- Content -->
+<div class="content">
+    <h1 class="fs-2 text-center mb-4">經費執行進度填報</h1>
+    <ul class="step">
+        <li class="step-item finished ">
+            <a href="#" class="step-link">
+                <span class="order">1</span>
+                <span class="text">選擇變更計畫</span>
+            </a>
+        </li>
+        <li class="step-item  active">
+            <a href="#" class="step-link">
+                <span class="order">2</span>
+                <span class="text">輸入變更內容</span>
+            </a>
+        </li>
+        <li class="step-item  ">
+            <a href="#" class="step-link">
+                <span class="order">3</span>
+                <span class="text">完成</span>
+            </a>
+        </li>
+    </ul><!-- Head -->
+    <div class="block-head border-bottom mb-4">
+        <div class="main-header w-100">
+            <h4 class="main-title ps-0">填寫表單</h4>
+            <div class="flex-item-wrap">
+                <button class="btn btn-purple btn-min-width">歷程審查</button>
+                <button class="btn btn-primary btn-min-width">通知計畫主持人</button>
+                <button class="btn btn-success btn-min-width">送簽</button>
+                <button class="btn btn-secondary btn-min-width">返回</button>
+            </div>
+        </div>
+    </div>
+    <!-- Table -->
+    <table class="table table-bordered table-outlineX mb-0 text-center table-rwd">
+        <thead>
+            <tr>
+                <th>總核定是否(元)</th>
+                <th>總執行數(元)</th>
+                <th>總執行率(%)</th>
+                <th>擬繳費回覆(元)</th>
+                <th>擬繳回後總執行率(%)</th>
+            </tr>
+        </thead>
+        <tbody class="text-center">
+            <tr>
+                <td data-th="總核定是否(元)">4,900,000</td>
+                <td data-th="總執行數(元)">4,900,000</td>
+                <td data-th="總執行率(%)" class="bg-green-light text-success fw-bold">9.5%</td>
+                <td data-th="擬繳費回覆(元)">4,900,000</td>
+                <td data-th="擬繳回後總執行率(%)">9.5%</td>
+            </tr>
+            <tr>
+                <td data-th="總核定是否(元)">4,900,000</td>
+                <td data-th="總執行數(元)">4,900,000</td>
+                <td data-th="總執行率(%)" class="bg-orange-light text-warning fw-bold">9.5%</td>
+                <td data-th="擬繳費回覆(元)">4,900,000</td>
+                <td data-th="擬繳回後總執行率(%)">9.5%</td>
+            </tr>
+            <tr>
+                <td data-th="總核定是否(元)">4,900,000</td>
+                <td data-th="總執行數(元)">4,900,000</td>
+                <td data-th="總執行率(%)" class="bg-red-light text-danger fw-bold">9.5%</td>
+                <td data-th="擬繳費回覆(元)">4,900,000</td>
+                <td data-th="擬繳回後總執行率(%)">9.5%</td>
+            </tr>
+        </tbody>
+    </table>
+    <!-- CTA -->
+    <div class="cta-group ">
+        <button class="btn btn-blue btn-min-width">上一步</button>
+        <button class="btn btn-primary btn-min-width">儲存</button>
+        <button class="btn btn-dark btn-min-width">匯出</button>
+    </div>
+    <div class="small text-center text-grey mt-2">變更人員：113-10-15 22:23:18 / 教務處 林O豪</div>
+</div>
+<!-- /.content -->
+
+<!-- MODAL -->
+<!-- Modal 資料歷史轉入 -->
+<div class="modal fade" id="dataHistoryImport" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="dataHistoryImportLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-4" id="dataHistoryImportLabel">資料歷史轉入</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <table class="table table-bordered mb-0 table-blue-light">
+                    <tbody>
+                        <tr>
+                            <th>計畫年度</th>
+                            <td>
+                                <select name="" id="" class="form-select w-auto">
+                                    <option value="">請選擇年度計畫</option>
+                                </select>
+                            </td>
+                            <th>執行單位</th>
+                            <td>
+                                <div class="flex-item-wrap">
+                                    <select name="" id="" class="form-select w-auto">
+                                        <option value="">請選擇</option>
+                                    </select>
+                                    <select name="" id="" class="form-select w-auto">
+                                        <option value="">請選擇</option>
+                                    </select>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>策劃主持人</th>
+                            <td colspan="3">
+                                <div class="flex-item-wrap">
+                                    <select name="" id="" class="form-select w-auto">
+                                        <option value="">請選擇所屬單位</option>
+                                    </select>
+                                    <select name="" id="" class="form-select w-auto">
+                                        <option value="">請選擇人員</option>
+                                    </select>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>計劃名稱</th>
+                            <td colspan="3">
+                                <input type="text" class="form-control" placeholder="請輸入計劃名稱">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="text-end mt-3 mb-4">
+                    <button class="btn btn-primary btn-min-width">查詢</button>
+                </div>
+                <table class="table table-bordered table-striped table-outlineX mb-0 text-center">
+                    <thead>
+                        <tr>
+                            <th>序</th>
+                            <th>年度</th>
+                            <th>計畫編號</th>
+                            <th>計畫名稱</th>
+                            <th>執行單位</th>
+                            <th>計畫主持人</th>
+                            <th>功能</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>113</td>
+                            <td>113H111-AA</td>
+                            <td class="text-start">計劃名稱計劃名稱計劃名稱 計劃名稱計劃名稱</td>
+                            <td>電算中心</td>
+                            <td>林歐豪</td>
+                            <td><button class="btn btn-outline-primary"><i class="fa-regular fa-copy"></i>複製</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>113</td>
+                            <td>113H111-AA</td>
+                            <td class="text-start">計劃名稱計劃名稱計劃名稱 計劃名稱計劃名稱</td>
+                            <td>電算中心</td>
+                            <td>林歐豪</td>
+                            <td><button class="btn btn-outline-primary"><i class="fa-regular fa-copy"></i>複製</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>113</td>
+                            <td>113H111-AA</td>
+                            <td class="text-start">計劃名稱計劃名稱計劃名稱 計劃名稱計劃名稱</td>
+                            <td>電算中心</td>
+                            <td>林歐豪</td>
+                            <td><button class="btn btn-outline-primary"><i class="fa-regular fa-copy"></i>複製</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="flex-start-end mt-3">
+                    <!-- Start -->
+                    <div class="start">
+                        <ul class="pagination mb-0">
+                            <li class="page-item">
+                                <a class="page-link" href="#" aria-label="First">
+                                    <span class="icon" aria-hidden="true"><i class="fa-solid fa-angles-left"></i></span>
+                                </a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" href="#" aria-label="Previous">
+                                    <span class="icon" aria-hidden="true"><i class="fa-solid fa-angle-left"></i></span>
+                                </a>
+                            </li>
+                            <li class="page-item"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item active"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item">
+                                <a class="page-link" href="#" aria-label="Next">
+                                    <span class="icon" aria-hidden="true"><i class="fa-solid fa-angle-right"></i></span>
+                                </a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" href="#" aria-label="Last">
+                                    <span class="icon" aria-hidden="true"><i
+                                            class="fa-solid fa-angles-right"></i></span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- End -->
+                    <div class="end">
+                        <div class="hstack gap-2">
+                            共 120筆，每頁顯示
+                            <input type="text" class="form-control py-0 text-center w-auto" value="10" size="2">
+                            筆
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary btn-min-width" data-bs-dismiss="modal">關閉</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal 是否確認刪除 -->
+<div class="modal fade" id="deleteAlertModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="deleteAlertModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class=" d-grid gap-2 text-center">
+                    <div class="warning-icon text-danger">
+                        <i class="fa-solid fa-circle-exclamation"></i>
+                    </div>
+                    <p class="fs-5">是否確定刪除？</p>
+                </div>
+            </div>
+            <div class="modal-footer justify-content-center">
+                <button class="btn btn-danger btn-min-width">刪除</button>
+                <button class="btn btn-secondary btn-min-width" data-bs-dismiss="modal">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(function () {
+        $('.footable').footable();
+    });
+</script>
+				</main>
+			</div>
+			<!-----主要內容結束----->
+		</div>
+		<a href="#" class="goTop btn btn-info">TOP</a>
+
+	</body>
+
+</html>

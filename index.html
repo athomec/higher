@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <title>政大高教深耕計畫專案管考平台</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="政大高教深耕計畫專案管考平台,政大,高等教育,政大高教深耕計畫">
+    <meta name="description" content="政大高教深耕計畫專案管考平台" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta property="og:site_name" content="政大高教深耕計畫專案管考平台" />
+    <meta property="og:image" content="assets/images/fb-img.png" />
+    <!--分享設定-->
+    <link rel="icon" href="assets/images/favicon.png">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="assets/vendor/bootstrap-5.3.3/dist/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="assets/vendor/fontawesome-free-6.5.2-web/css/all.min.css">
+    <!-- 自訂 -->
+    <link rel="stylesheet" href="assets/style/main.css">
+    <link rel="stylesheet-disabled" href="assets/style/login.css">
+    <!-- flatpickr -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/zh.js"></script>
+    <!-- script 開始 -->
+    <script src="assets/js/jquery-3.7.1.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.js"></script>
+    <script src="assets/js/jquery-ui.js"></script>
+    <script src="assets/js/echarts.js"></script><!--圖表-->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script><!--圖表-->
+    <script src="assets/js/footable.js"></script><!--圖表-->
+    <script src="assets/js/script.js"></script><!--自訂-->
+    <!-- script 結束 -->
+
+</head>
+
+	<body>
+		<div class="wrapper">
+			<!-- 版頭開始 -->
+			<div class="top position-fixed w-100">
+				<div class="header">
+					<h3 class="start brand-name"><a href="index.html" title="回首頁">政大高教深耕計畫<br
+								class="d-inline d-sm-none">專案管考平台</a></h3>
+					<div class="header-end hstack gap-2 gap-sm-3">
+						<div class="font-size-wrapper hstack gap-1 me-2">
+							<span class="me-1">字級</span>
+							<div class="font-size-filter">
+								<input type="radio" class="fontSize-lg" name="fontSize" id="fontSize-lg" hidden>
+								<label for="fontSize-lg">大</label>
+							</div>
+							<div class="font-size-filter">
+								<input type="radio" class="fontSize-md" name="fontSize" id="fontSize-md" hidden checked>
+								<label for="fontSize-md">中</label>
+							</div>
+							<div class="font-size-filter">
+								<input type="radio" class="fontSize-sm" name="fontSize" id="fontSize-sm" hidden>
+								<label for="fontSize-sm">小</label>
+							</div>
+						</div>
+						<div class="ms-2">XXX123，您好</div>
+						<a href="login.html" class="btn btn-outline-primary bg-white text-primary">登出</a>
+					</div>
+				</div>
+			</div>
+			<!-- 版頭結束 -->
+
+			<!-- Bottom -->
+			<div class="bottom">
+				<!-----側邊選單開始----->
+				<button class="btn btn-primary sidebar-toggler"><span>menu</span><img
+						src="./assets/images/ic-arrow-right.svg" alt="icon"></button>
+				<aside class="sidebar scroll">
+					<!-- Menu -->
+					<ul class="menu">
+						<!-- 深耕辦公室專區 -->
+						<li>
+							<a href="#" class="children ">
+								<span>
+									<i class="ic menu-office"></i>
+									<span class="text">深耕辦公室專區</span>
+								</span>
+								<span class="children-arrow">
+									<span class="expanded-false text-grey-pale"><i
+											class="fa-solid fa-circle-plus"></i></span>
+									<span class="expanded-true text-primary"><i
+											class="fa-solid fa-circle-minus"></i></span>
+								</span>
+							</a>
+							<ul class="level-2">
+								<li><a href="XXX.html">提案期程設定</a></li>
+								<li><a href="XXX.html">執行填報期程設定</a></li>
+								<li><a href="statistics.html">新年度計畫設定</a></li>
+								<li><a href="XXX.html">新年度提案審查</a></li>
+								<li><a href="XXX.html">經費執行進度審查</a></li>
+								<li><a href="XXX.html">計畫經費配置</a></li>
+								<li><a href="XXX.html">計畫成果審查</a></li>
+								<li><a href="XXX.html">計畫成員年資查詢</a></li>
+								<li><a href="XXX.html">人力續聘審查</a></li>
+								<li><a href="XXX.html">全校深耕計畫關鍵指標審查</a></li>
+								<li><a href="XXX.html">經費變更審查</a></li>
+								<li><a href="XXX.html">預算期程變更審查</a></li>
+								<li><a href="XXX.html">報表查詢</a></li>
+							</ul>
+						</li>
+						<!-- 計畫單位專區 -->
+						<li>
+							<a href="#" class="children ">
+								<span>
+									<i class="ic menu-plan"></i>
+									<span class="text">計畫單位專區</span>
+								</span>
+								<span class="children-arrow">
+									<span class="expanded-false text-grey-pale"><i
+											class="fa-solid fa-circle-plus"></i></span>
+									<span class="expanded-true text-primary"><i
+											class="fa-solid fa-circle-minus"></i></span>
+								</span>
+							</a>
+							<ul class="level-2">
+								<li><a href="projects-proposal.html" class="">計畫提案管理</a></li>
+								<li><a href="projects-fund-add.html" class="">經費執行進度填報</a></li>
+								<li><a href="XXX.html">計畫成果填</a></li>
+								<li><a href="XXX.html">計畫成員年資確認</a></li>
+								<li><a href="XXX.html">人力續聘調查</a></li>
+								<li><a href="XXX.html">計畫經費變更</a></li>
+								<li><a href="XXX.html">預算期程變更</a></li>
+							</ul>
+						</li>
+						<!-- 人事主計專區 -->
+						<li>
+							<a href="#" class="children ">
+								<span>
+									<i class="ic menu-money"></i>
+									<span class="text">人事主計專區</span>
+								</span>
+								<span class="children-arrow">
+									<span class="expanded-false text-grey-pale"><i
+											class="fa-solid fa-circle-plus"></i></span>
+									<span class="expanded-true text-primary"><i
+											class="fa-solid fa-circle-minus"></i></span>
+								</span>
+							</a>
+							<ul class="level-2">
+								<li><a href="XXX.html">計畫經費審查</a></li>
+								<li><a href="XXX.html">計畫員額審查</a></li>
+								<li><a href="XXX.html">計畫成員年資審查</a></li>
+							</ul>
+						</li>
+						<!-- 成果指標專區 -->
+						<li>
+							<a href="#" class="children ">
+								<span>
+									<i class="ic menu-result"></i>
+									<span class="text">成果指標專區</span>
+								</span>
+								<span class="children-arrow">
+									<span class="expanded-false text-grey-pale"><i
+											class="fa-solid fa-circle-plus"></i></span>
+									<span class="expanded-true text-primary"><i
+											class="fa-solid fa-circle-minus"></i></span>
+								</span>
+							</a>
+							<ul class="level-2">
+								<li><a href="XXX.html">全校深耕計畫關鍵指標填報</a></li>
+								<li><a href="XXX.html">深耕計畫發展建議填報</a></li>
+							</ul>
+						</li>
+						<!-- 審查委員專區 -->
+						<li>
+							<a href="#" class="children ">
+								<span>
+									<i class="ic menu-member"></i>
+									<span class="text">審查委員專區</span>
+								</span>
+								<span class="children-arrow">
+									<span class="expanded-false text-grey-pale"><i
+											class="fa-solid fa-circle-plus"></i></span>
+									<span class="expanded-true text-primary"><i
+											class="fa-solid fa-circle-minus"></i></span>
+								</span>
+							</a>
+							<ul class="level-2">
+								<li><a href="XXX.html">計畫成果檢閱</a></li>
+							</ul>
+						</li>
+						<!-- 系統管理 -->
+						<li>
+							<a href="#" class="children ">
+								<span>
+									<i class="ic menu-system"></i>
+									<span class="text">系統管理</span>
+								</span>
+								<span class="children-arrow">
+									<span class="expanded-false text-grey-pale"><i
+											class="fa-solid fa-circle-plus"></i></span>
+									<span class="expanded-true text-primary"><i
+											class="fa-solid fa-circle-minus"></i></span>
+								</span>
+							</a>
+							<ul class="level-2">
+								<li><a href="XXX.html">系統公告</a></li>
+								<li><a href="XXX.html">量化及績效指標維護</a></li>
+								<li><a href="XXX.html">新舊計畫代碼關聯</a></li>
+								<li><a href="XXX.html">使用者管理</a></li>
+								<li><a href="XXX.html">角色及功能維護</a></li>
+								<li><a href="XXX.html">系統LOG紀錄</a></li>
+								<li><a href="XXX.html">使用者軌跡</a></li>
+							</ul>
+						</li>
+					</ul>
+				</aside>
+				<!-----側邊選單結束----->
+
+				<!-----主要內容開始----->
+				<main class="main pt-4 pt-lg-5">
+						
+<div class="content">
+    <div class="row g-4">
+        <div class="col-xxl-6">
+            <div class="block h-100 bg-sky-blue-light">
+                <div class="block-head">
+                    <h4 class="block-head-title mb-0">我的計畫列表</h4>
+                    <a href="#" class="btn btn-info btn-xs px-3 py-2">更多</a>
+                </div>
+                <div class="block-body">
+                    <table class="table table-bordered table-striped table-outlineX table-rwd mb-0 text-center"
+                        data-title="overline2">
+                        <thead>
+                            <tr>
+                                <th class="text-nowrap">年度</th>
+                                <th width="98">計畫編號</th>
+                                <th width="88" class="text-nowrap">執行單位</th>
+                                <th>計畫名稱</th>
+                                <th width="65" class="text-nowrap">狀態</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td data-th="年　　度">114</td>
+                                <td data-th="計畫編號">113GH 117</td>
+                                <td data-th="執行單位">深耕辦</td>
+                                <td data-th="計畫名稱" class="text-start fw-medium">
+                                    <p>計畫名稱計畫名稱計畫名稱計畫名稱計畫名稱A</p>
+                                </td>
+                                <td data-th="狀　　態" class="bg bg-green-light">
+                                    <div class="state-text success fw-medium">
+                                        <img src="./assets/images/ic-pass.svg" alt="icon"><span>通過</span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td data-th="年　　度">114</td>
+                                <td data-th="計畫編號">113GH 117</td>
+                                <td data-th="執行單位">深耕辦</td>
+                                <td data-th="計畫名稱" class="text-start fw-medium">
+                                    <p>計畫名稱計畫名稱計畫名稱計畫名稱計畫名稱A</p>
+                                </td>
+                                <td data-th="狀　　態" class="bg bg-orange-light">
+                                    <div class="state-text warning fw-medium">
+                                        <img src="./assets/images/ic-checking.svg" alt="icon"><span>審查中</span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td data-th="年　　度">114</td>
+                                <td data-th="計畫編號">113GH 117</td>
+                                <td data-th="執行單位">深耕辦</td>
+                                <td data-th="計畫名稱" class="text-start fw-medium">
+                                    <p>計畫名稱計畫名稱計畫名稱計畫名稱計畫名稱A</p>
+                                </td>
+                                <td data-th="狀　　態" class="bg bg-red-light">
+                                    <div class="state-text danger fw-medium">
+                                        <img src="./assets/images/ic-yet.svg" alt="icon"><span>未審查</span>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-xxl-6">
+            <div class="block h-100 bg-sky-blue-light">
+                <div class="block-head">
+                    <h4 class="block-head-title mb-0">最新公告</h4>
+                    <a href="#" class="btn btn-info btn-xs px-3 py-2">更多</a>
+                </div>
+                <div class="block-body scroll overflow-x-hidden" style="height: 241px;">
+                    <table class="table table-bordered table-striped table-outlineX table-rwd mb-0 h-100 text-center"
+                        data-title="overline2">
+                        <thead class="sticky-top">
+                            <tr>
+                                <th class="text-nowrap" width="90">類型</th>
+                                <th class="text-nowrap">時間</th>
+                                <th>計畫名稱</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td data-th="類　　型"> <span class="text-danger fw-medium">提醒</span></td>
+                                <td data-th="時　　間">2024/12/1<br>15:30</td>
+                                <td data-th="計畫名稱" class="text-start fw-medium">
+                                    <p>延續型計畫提案即將到期,請於期限內完成填報。</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td data-th="類　　型"><span class="text-blue fw-medium">重要公告</span></td>
+                                <td data-th="時　　間">2024/12/1<br>15:30</td>
+                                <td data-th="計畫名稱" class="text-start fw-medium">
+                                    <p>年資認列即將到期,請於期限內完成填報。</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td data-th="類　　型" class="text-dark-grey fw-medium">一般公告</td>
+                                <td data-th="時　　間">2024/12/1<br>15:30</td>
+                                <td data-th="計畫名稱" class="text-start fw-medium">
+                                    <p>公告訊息公告訊息公告訊息</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td data-th="類　　型"> <span class="text-danger fw-medium">提醒</span></td>
+                                <td data-th="時　　間">2024/12/1<br>15:30</td>
+                                <td data-th="計畫名稱" class="text-start fw-medium">
+                                    <p>公告標題文字公告標題文字公告標題文字公告標題文字公告標題文字公告標題文字</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td data-th="類　　型"><span class="text-blue fw-medium">重要公告</span></td>
+                                <td data-th="時　　間">2024/12/1<br>15:30</td>
+                                <td data-th="計畫名稱" class="text-start fw-medium">
+                                    <p>公告標題文字公告標題文字公告標題文字公告標題文字公告標題文字公告標題文字</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td data-th="類　　型" class="text-dark-grey fw-medium">一般公告</td>
+                                <td data-th="時　　間">2024/12/1<br>15:30</td>
+                                <td data-th="計畫名稱" class="text-start fw-medium">
+                                    <p>年資認列即將到期,請於期限內完成填報。</p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="block bg-sky-blue-light">
+                <div class="block-head">
+                    <h4 class="block-head-title mb-0">待審查項目列表</h4>
+                    <a href="#" class="btn btn-info btn-xs px-3 py-2">更多</a>
+                </div>
+                <div class="block-body">
+                    <div class="base-container px-4 py-3">
+                        <ul class="info-list">
+                            <li>
+                                <p>目前尚有 <span class="text-danger">1</span> 筆 <span class="text-primary">
+                                        <br class="d-inline d-sm-none">
+                                        【新年度提案】</span>未審查
+                                </p>
+                            </li>
+                            <li>
+                                <p>目前尚有 <span class="text-danger">1</span> 筆 <span class="text-primary">
+                                        <br class="d-inline d-sm-none">
+                                        【經費執行進度】</span>未審查
+                                </p>
+                            </li>
+                            <li>
+                                <p>目前尚有 <span class="text-danger">1</span> 筆 <span class="text-primary">
+                                        <br class="d-inline d-sm-none">
+                                        【計畫成果】</span>未審查
+                                </p>
+                            </li>
+                            <li>
+                                <p>目前尚有 <span class="text-danger">1</span> 筆 <span class="text-primary">
+                                        <br class="d-inline d-sm-none">
+                                        【人力續聘】</span>未審查
+                                </p>
+                            </li>
+                            <li>
+                                <p>目前尚有 <span class="text-danger">1</span> 筆 <span class="text-primary">
+                                        <br class="d-inline d-sm-none">
+                                        【全校深耕計畫關鍵指標】</span>未審查
+                                </p>
+                            </li>
+                            <li>
+                                <p>目前尚有 <span class="text-danger">1</span> 筆 <span class="text-primary">
+                                        <br class="d-inline d-sm-none">
+                                        【深耕計畫發展建議】</span>未審查
+                                </p>
+                            </li>
+                            <li>
+                                <p>目前尚有 <span class="text-danger">1</span> 筆 <span class="text-primary">
+                                        <br class="d-inline d-sm-none">
+                                        【經費變更】</span>未審查
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="block bg-sky-blue-light rounded-bottom-0 pb-3">
+                <div class="block-head">
+                    <h4 class="block-head-title mb-0">經費執行進度</h4>
+                    <a href="#" class="btn btn-info btn-xs px-3 py-2">更多</a>
+                </div>
+                <div class="block-body">
+                    <div class="row gy-3">
+                        <div class="col-md-3 col-xxl-3">
+                            <div class="d-flex align-items-center flex-wrap flex-sm-nowrap">
+                                <label for="year" class="form-label mb-2 mb-sm-0">年度</label>
+                                <select class="form-select" id="year">
+                                    <option value="">114</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-8 col-xxl-6">
+                            <div class="d-flex align-items-center flex-wrap flex-sm-nowrap">
+                                <label for="executing-unit" class="form-label mb-2 mb-sm-0">執行單位</label>
+                                <select class="form-select me-0 me-sm-3 mb-2 mb-sm-0" id="executing-unit">
+                                    <option value="">請選擇所屬單位</option>
+                                </select>
+                                <label for="executing-branch" class="form-label mb-0 visually-hidden">分部</label>
+                                <select class="form-select" id="executing-branch">
+                                    <option value="">請選擇</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="block bg-grey-light rounded-top-0 py-4">
+                <div class="row gy-3">
+                    <div class="col-md-4">
+                        <div class="data-box js-toggle" data-style="red" data-bs-toggle="collapse"
+                            data-bs-target="#red">
+                            <h5 class="data-box-title">
+                                紅燈(30 %以下)
+                            </h5>
+                            <span>計畫數量： 3 件</span>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="data-box js-toggle" data-style="yellow" data-bs-toggle="collapse"
+                            data-bs-target="#yellow">
+                            <h5 class="data-box-title">
+                                黃燈(60 %以下)
+                            </h5>
+                            <span>計畫數量： 1 件</span>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="data-box js-toggle" data-style="green" data-bs-toggle="collapse"
+                            data-bs-target="#green">
+                            <h5 class="data-box-title">
+                                綠燈(90 %以下)
+                            </h5>
+                            <span>計畫數量： 0 件</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="collapse" id="red">
+                    <h5 class="header-light mt-4" data-style="red">
+                        紅燈清單
+                    </h5>
+                    <table class="table table-bordered table-striped table-outlineX text-center" data-title="overline2"
+                        data-style="pale">
+                        <thead>
+                            <tr>
+                                <th class="text-nowrap" width="150">計畫編號</th>
+                                <th class="text-nowrap">計畫名稱</th>
+                                <th width="150">計畫單位</th>
+                                <th width="150">計畫主持人</th>
+                                <th width="130">實支率</th>
+                                <th width="130">廣義行率</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>113GH 117</td>
+                                <td class="text-start fw-medium">
+                                    <p>深耕辦計畫1</p>
+                                </td>
+                                <td>深耕辦</td>
+                                <td>王曉明</td>
+                                <td>5%</td>
+                                <td>5%</td>
+                            </tr>
+                            <tr>
+                                <td>113GH 118</td>
+                                <td class="text-start fw-medium">
+                                    <p>深耕辦計畫2</p>
+                                </td>
+                                <td>深耕辦</td>
+                                <td>王曉明</td>
+                                <td>10%</td>
+                                <td>10%</td>
+                            </tr>
+                            <tr>
+                                <td>113GH 119</td>
+                                <td class="text-start fw-medium">
+                                    <p>深耕辦計畫3</p>
+                                </td>
+                                <td>深耕辦</td>
+                                <td>王曉明</td>
+                                <td>15%</td>
+                                <td>15%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="collapse" id="yellow">
+                    <h5 class="header-light mt-4" data-style="yellow">
+                        黃燈清單
+                    </h5>
+                    <table class="table table-bordered table-striped table-outlineX text-center" data-title="overline2"
+                        data-style="pale">
+                        <thead>
+                            <tr>
+                                <th class="text-nowrap" width="150">計畫編號</th>
+                                <th class="text-nowrap">計畫名稱</th>
+                                <th width="150">計畫單位</th>
+                                <th width="150">計畫主持人</th>
+                                <th width="130">實支率</th>
+                                <th width="130">廣義行率</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>113GH 117</td>
+                                <td class="text-start fw-medium">
+                                    <p>深耕辦計畫4</p>
+                                </td>
+                                <td>深耕辦</td>
+                                <td>王曉明</td>
+                                <td>5%</td>
+                                <td>5%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="collapse" id="green">
+                    <h5 class="header-light mt-4" data-style="green">
+                        綠燈清單
+                    </h5>
+                    <table class="table table-bordered table-striped table-outlineX text-center" data-title="overline2"
+                        data-style="pale">
+                        <thead>
+                            <tr>
+                                <th class="text-nowrap" width="150">計畫編號</th>
+                                <th class="text-nowrap">計畫名稱</th>
+                                <th width="150">計畫單位</th>
+                                <th width="150">計畫主持人</th>
+                                <th width="130">實支率</th>
+                                <th width="130">廣義行率</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>113GH 117</td>
+                                <td class="text-start fw-medium">
+                                    <p>深耕辦計畫5</p>
+                                </td>
+                                <td>深耕辦</td>
+                                <td>王曉明</td>
+                                <td>5%</td>
+                                <td>5%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="block bg-sky-blue-light">
+                <div class="block-head">
+                    <h4 class="block-head-title mb-0">個別計畫經費概況</h4>
+                    <a href="#" class="btn btn-info btn-xs px-3 py-2">更多</a>
+                </div>
+                <div class="block-body">
+                    <div class="row g-3">
+                        <div class="col-md-3 col-xxl-3">
+                            <div class="d-flex align-items-center flex-wrap flex-sm-nowrap">
+                                <label for="plan-year" class="form-label mb-2 mb-sm-0">年度</label>
+                                <select class="form-select" id="plan-year">
+                                    <option value="">114</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-8 col-xxl-6">
+                            <div class="d-flex align-items-center flex-wrap flex-sm-nowrap">
+                                <label for="plan" class="form-label mb-2 mb-sm-0">計畫</label>
+                                <select class="form-select me-sm-3" id="plan">
+                                    <option value="">請選擇</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row g-2 g-sm-3 mb-3 align-items-stretch">
+                        <div class="col-12">
+                            <div class="light-container px-3 px-sm-4 py-2 py-sm-3 h-100" data-con="number">
+                                <p class="mb-0">計畫總經費最新核定數</p>
+                                <button type="button" class="btn btn-white" data-bs-toggle="tooltip"
+                                    data-bs-placement="right" data-bs-custom-class="custom-tooltip"
+                                    data-bs-title="說明說明說明">
+                                    <img src="./assets/images/ic-info.svg" alt="icon">
+                                </button>
+                                <span class="text-green fw-bold fs-3">2,000,000</span>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-xxl-4">
+                            <div class="light-container px-3 px-sm-4 py-2 py-sm-3 h-100" data-con="number">
+                                <p class="mb-0">總實支率</p>
+                                <button type="button" class="btn btn-white" data-bs-toggle="tooltip"
+                                    data-bs-placement="right" data-bs-custom-class="custom-tooltip"
+                                    data-bs-title="說明說明說明">
+                                    <img src="./assets/images/ic-info.svg" alt="icon">
+                                </button>
+                                <span class="text-blue fw-bold fs-4">25%</span>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-xxl-4">
+                            <div class="light-container px-3 px-sm-4 py-2 py-sm-3 h-100" data-con="number">
+                                <p class="mb-0">總實支數</p>
+                                <button type="button" class="btn btn-white" data-bs-toggle="tooltip"
+                                    data-bs-placement="right" data-bs-custom-class="custom-tooltip"
+                                    data-bs-title="說明說明說明">
+                                    <img src="./assets/images/ic-info.svg" alt="icon">
+                                </button>
+                                <span class="text-blue fw-bold fs-4">500,000</span>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-xxl-4">
+                            <div class="light-container px-3 px-sm-4 py-2 py-sm-3 h-100" data-con="number">
+                                <p class="mb-0">尚核銷中</p>
+                                <button type="button" class="btn btn-white" data-bs-toggle="tooltip"
+                                    data-bs-placement="right" data-bs-custom-class="custom-tooltip"
+                                    data-bs-title="說明說明說明">
+                                    <img src="./assets/images/ic-info.svg" alt="icon">
+                                </button>
+                                <span class="text-blue fw-bold fs-4">150,000</span>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-xxl-4">
+                            <div class="light-container px-3 px-sm-4 py-2 py-sm-3 h-100" data-con="number">
+                                <p class="mb-0">廣義執行率</p>
+                                <button type="button" class="btn btn-white" data-bs-toggle="tooltip"
+                                    data-bs-placement="right" data-bs-custom-class="custom-tooltip"
+                                    data-bs-title="說明說明說明">
+                                    <img src="./assets/images/ic-info.svg" alt="icon">
+                                </button>
+                                <span class="text-blue fw-bold fs-4">32.5%</span>
+                            </div>
+                        </div>
+                        <div class="col-xxl-8">
+                            <div class="light-container px-3 px-sm-4 py-2 py-sm-3 h-100" data-con="number">
+                                <p class="mb-0">至今年底尚可用經費</p>
+                                <button type="button" class="btn btn-white" data-bs-toggle="tooltip"
+                                    data-bs-placement="right" data-bs-custom-class="custom-tooltip"
+                                    data-bs-title="說明說明說明">
+                                    <img src="./assets/images/ic-info.svg" alt="icon">
+                                </button>
+                                <span class="text-blue fw-bold fs-4">1,350,000</span>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-12 col-xl-6">
+                            <div class="chart-header bg-blue">
+                                <p>分項實支率</p>
+                                <label for="chart-rate-select" class="form-label mb-0 visually-hidden">圖表</label>
+                                <select class="form-select" id="chart-rate-select">
+                                    <option value="長條圖">長條圖</option>
+                                    <option value="圓餅圖">圓餅圖</option>
+                                </select>
+                            </div>
+                            <div class="light-container rounded-top-0">
+                                <div id="chart-rate" style="width: 100%; height:300px;"></div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-12 col-xl-6">
+                            <div class="chart-header bg-blue">
+                                <p>分項實支率數據</p>
+                            </div>
+                            <div class="light-container rounded-top-0">
+                                <table class="table table-bordered table-outlineX mb-0" data-thead="none">
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">人事費</th>
+                                            <td>12.9%</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">業務費 1</th>
+                                            <td>3.7%</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">業務費 2</th>
+                                            <td>7.71%</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">國外差旅費</th>
+                                            <td>5%</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">資本門</th>
+                                            <td>5%</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <ul>
+                                    <li><span class="text-blue text-center">資料來源：</span>主計室</li>
+                                    <li><span class="text-blue">資料區間：</span>114 年 1 月 1 日至今日止</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-12 col-xl-6">
+                            <div class="chart-header bg-blue">
+                                <p>尚可用經費</p>
+                                <label for="chart-fund-select" class="form-label mb-0 visually-hidden">圖表</label>
+                                <select class="form-select" id="chart-fund-select">
+                                    <option value="圓餅圖">圓餅圖</option>
+                                    <option value="長條圖">長條圖</option>
+                                </select>
+                            </div>
+                            <div class="light-container rounded-top-0">
+                                <div id="chart-fund" style="width: 100%; height:300px;"></div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-12 col-xl-6">
+                            <div class="chart-header bg-blue">
+                                <p>尚可用經費數據</p>
+                            </div>
+                            <div class="light-container rounded-top-0">
+                                <table class="table table-bordered table-outlineX mb-0" data-thead="none">
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">人事費</th>
+                                            <td>1,094,401</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">業務費 1</th>
+                                            <td>342,000</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">業務費 2</th>
+                                            <td>590,217</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">國外差旅費</th>
+                                            <td>120,000</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">資本門</th>
+                                            <td>36,000</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <ul>
+                                    <li><span class="text-blue text-center">資料來源：</span>主計室</li>
+                                    <li><span class="text-blue">資料區間：</span>114 年 1 月 1 日至今日止</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="chart-header bg-blue">
+                                <p>每月執行比重</p>
+                                <label for="chart-run-select" class="form-label mb-0 visually-hidden">圖表</label>
+                                <select class="form-select" id="chart-run-select">
+                                    <option value="曲線趨勢分布圖">曲線趨勢分布圖 </option>
+                                    <option value="堆疊柱狀圖">堆疊柱狀圖 </option>
+                                </select>
+                            </div>
+                            <div class="light-container rounded-top-0 py-3">
+                                <div id="chart-run" style="width: 100%; height:580px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    const allCharts = [];
+
+    // 建立長條圖 Option
+    function createBarOption(categories, data, tooltipFormatter) {
+        return {
+            tooltip: {
+                trigger: 'item',
+                formatter: tooltipFormatter || (p => `${p.name} : ${p.value}`)
+            },
+            xAxis: { type: 'category', data: categories },
+            yAxis: { show: false },
+            series: [{ data: data, type: 'bar' }]
+        };
+    }
+
+    // 建立圓餅圖 Option
+    function createPieOption(categories, data, tooltipFormatter) {
+            const isSmallScreen = window.innerWidth < 1600;
+
+            return {
+                tooltip: {
+                    trigger: 'item',
+                    formatter: tooltipFormatter || (p => `${p.name} : ${p.value}`)
+                },
+                series: [{
+                    type: 'pie',
+                    radius: '60%',
+                    center: isSmallScreen ? ['50%', '60%'] : ['50%', '50%'], // 💡 自動調整圓心
+                    data: categories.map((name, i) => ({
+                        name: name,
+                        value: data[i]
+                    })),
+                    label: {
+                        position: getResponsiveLabel(),
+                    }
+                }],
+                legend: getResponsiveLegend(),
+            };
+        }
+
+    function getResponsiveLegend() {
+        if (window.innerWidth < 1600) {
+            return {
+                orient: 'horizontal',
+                left: 'center',
+                top: 8
+            };
+        } else {
+            return {
+                orient: 'vertical',
+                left: 'left',
+                top: 0,
+                padding: [30, 0, 0, 20]
+            };
+        }
+    }
+        function getResponsiveLabel() {
+                return window.innerWidth < 500 ? 'inside' : 'outside';
+            }
+    // 初始化一個可由 select 切換的 ECharts
+    function setupToggleChart(domId, selectId, optionsMap, defaultKey) {
+            const chart = echarts.init(document.getElementById(domId));
+            let currentKey = defaultKey;
+
+            chart.setOption(optionsMap[currentKey]);
+            allCharts.push({ chart, optionsMap, currentKey });
+
+            document.getElementById(selectId)
+                .addEventListener('change', e => {
+                    currentKey = e.target.value;
+                    chart.setOption(optionsMap[currentKey], true);
+                    const chartItem = allCharts.find(c => c.chart === chart);
+                    if (chartItem) chartItem.currentKey = currentKey;
+                });
+        }
+
+    // 第一組：分項實支 //
+    const categories1 = ['人事費', '業務費 1', '業務費 2', '國外差旅費', '資本門'];
+    const data1 = [12.9, 3.7, 7.71, 5, 5];
+    const bar1 = createBarOption(
+        categories1, data1,
+        p => `${p.name} : ${p.value}%`
+    );
+    const pie1 = createPieOption(
+        categories1, data1,
+        p => `${p.name} : ${p.value}%`
+    );
+    setupToggleChart(
+        'chart-rate',
+        'chart-rate-select',
+        { '長條圖': bar1, '圓餅圖': pie1 },
+        '長條圖'
+    );
+
+    //  第二組：可用經費 //
+    const data2 = [1094401, 342000, 590217, 120000, 36000];
+    const bar2 = createBarOption(
+        categories1, data2,
+        p => `${p.name} : ${p.value.toLocaleString()}`
+    );
+    const pie2 = createPieOption(
+        categories1, data2,
+        p => `${p.name} : ${p.value.toLocaleString()} (${p.percent}%)`
+    );
+    setupToggleChart(
+        'chart-fund',
+        'chart-fund-select',
+        { '長條圖': bar2, '圓餅圖': pie2 },
+        '圓餅圖'
+    );
+
+    //  第三組：每月趨勢 vs 堆疊柱狀  //
+    // 曲線趨勢分布
+    const stackArea = {
+        tooltip: {
+            trigger: 'axis',
+            axisPointer: { type: 'cross', label: { backgroundColor: '#6a7985' } }
+        },
+        legend: { data: categories1 },
+        grid: { left: '3%', right: '4%', bottom: '3%', containLabel: true },
+        xAxis: [{ type: 'category', boundaryGap: false, data: ['一月', '二月', '三月', '四月', '五月', '六月', '七月'] }],
+        yAxis: [{ type: 'value' }],
+        series: [
+            { name: '人事費', type: 'line', stack: '總量', areaStyle: {}, emphasis: { focus: 'series' }, data: [320, 332, 301, 334, 390, 330, 320] },
+            { name: '業務費 1', type: 'line', stack: '總量', areaStyle: {}, emphasis: { focus: 'series' }, data: [120, 132, 101, 134, 90, 230, 210] },
+            { name: '業務費 2', type: 'line', stack: '總量', areaStyle: {}, emphasis: { focus: 'series' }, data: [220, 182, 191, 234, 290, 330, 310] },
+            { name: '國外差旅費', type: 'line', stack: '總量', areaStyle: {}, emphasis: { focus: 'series' }, data: [150, 232, 201, 154, 190, 330, 410] },
+            { name: '資本門', type: 'line', stack: '總量', areaStyle: {}, emphasis: { focus: 'series' }, data: [820, 932, 901, 934, 1290, 1330, 1320] }
+        ]
+    };
+
+    // 堆疊柱狀圖
+    const stackBar = {
+        xAxis: { data: categories1 },
+        yAxis: {},
+        series: [
+            { data: [10, 22, 28, 43, 49], type: 'bar', stack: 'x' },
+            { data: [5, 4, 3, 5, 10], type: 'bar', stack: 'x' }
+        ]
+    };
+
+    setupToggleChart(
+        'chart-run',
+        'chart-run-select',
+        {
+            '曲線趨勢分布圖': stackArea,
+            '堆疊柱狀圖': stackBar
+        },
+        '曲線趨勢分布圖'
+    );
+    window.addEventListener('resize', function () {
+            allCharts.forEach(({ chart, optionsMap, currentKey }) => {
+                const option = optionsMap[currentKey];
+                const isPie = option.series && option.series[0]?.type === 'pie';
+
+                if (isPie) {
+                    const isSmallScreen = window.innerWidth < 1600;
+                    chart.setOption({
+                        legend: getResponsiveLegend(),
+                        series: [{
+                            center: isSmallScreen ? ['50%', '60%'] : ['50%', '50%'],
+                            label: {
+                                position: getResponsiveLabel()
+                            }
+                        }]
+                    });
+                }
+
+                chart.resize();
+            });
+        });
+</script>
+				</main>
+			</div>
+			<!-----主要內容結束----->
+		</div>
+		<a href="#" class="goTop btn btn-info">TOP</a>
+
+	</body>
+
+</html>

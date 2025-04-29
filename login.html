@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+	
+<head>
+    <title>政大高教深耕計畫專案管考平台</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="政大高教深耕計畫專案管考平台,政大,高等教育,政大高教深耕計畫">
+    <meta name="description" content="政大高教深耕計畫專案管考平台" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta property="og:site_name" content="政大高教深耕計畫專案管考平台" />
+    <meta property="og:image" content="assets/images/fb-img.png" />
+    <!--分享設定-->
+    <link rel="icon" href="assets/images/favicon.png">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="assets/vendor/bootstrap-5.3.3/dist/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="assets/vendor/fontawesome-free-6.5.2-web/css/all.min.css">
+    <!-- 自訂 -->
+    <link rel="stylesheet" href="assets/style/main.css">
+    <link rel="stylesheet" href="assets/style/login.css">
+    <!-- flatpickr -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/zh.js"></script>
+    <!-- script 開始 -->
+    <script src="assets/js/jquery-3.7.1.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.js"></script>
+    <script src="assets/js/jquery-ui.js"></script>
+    <script src="assets/js/echarts.js"></script><!--圖表-->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script><!--圖表-->
+    <script src="assets/js/footable.js"></script><!--圖表-->
+    <script src="assets/js/script.js"></script><!--自訂-->
+    <!-- script 結束 -->
+
+</head>
+	<body class="overflow-y-auto">
+		
+  <div class="login-wrapper">
+      <div class="login">
+          <!-- Start -->
+          <div class="start">
+              <h1 class="title mb-4 mb-xl-5">政大高教深耕計畫專案<br class="d-inline d-sm-none">管考平台</h1>
+              <!-- 帳號 -->
+              <input type="text" class="user-account form-control mb-4 mb-xl-5" placeholder="請輸入帳號">
+              <!-- 密碼 -->
+              <div class="password-eye">
+                  <input type="password" class="user-password form-control" placeholder="請輸入密碼">
+                  <span class="icon">
+                      <a href="#" class="off">
+                          <img src="assets/images/login_ic_key_off.svg" alt="不顯示密碼" title="不顯示密碼">
+                      </a>
+                      <a href="#" class="on" style="display: none;">
+                          <img src="assets/images/login_ic_key_on.svg" alt="顯示密碼" title="顯示密碼">
+                      </a>
+                  </span>
+              </div>
+              <!-- 修改密碼/忘記密碼 -->
+              <div class="hstack justify-content-end gap-3 lh-1 fs-18 my-4">
+                  <a href="#" class="text-primary fw-bold"><img src="assets/images/login_ic_reset.svg" alt="修改密碼圖示"> 修改密碼</a>
+                  <span class="text-grey">|</span>
+                  <a href="#" class="text-primary fw-bold"><img src="assets/images/login_ic_forgot.svg" alt="忘記密碼圖示"> 忘記密碼</a>
+              </div>
+              <!-- 輸入驗證碼 -->
+              <div class="hstack gap-3 flex-wrap flex-md-nowrap mb-4 mb-xl-5">
+                  <input type="text" class="form-control flex-shrink-0 flex-sm-shrink-1" placeholder="請輸入驗證碼">
+                  <img src="assets/images/img-secu-code.png" alt="驗證碼" class="verification">
+                  <div class="vstack flex-row flex-md-column">
+                      <a href="#" class="me-2 me-md-0 mt-auto mt-md-0"><img src="assets/images/login_ic_re.svg" alt="重新整理" title="重新整理"></a>
+                      <a href="#" class="mt-auto"><img src="assets/images/login_ic_vo.svg" alt="語音撥放" title="語音撥放"></a>
+                  </div>
+              </div>
+              <!-- 登入按鈕 -->
+              <a href="index.html" class="btn-login btn btn-blue">登入</a>
+          </div>
+          <!-- End -->
+           <div class="end">
+              <img src="assets/images/login_img_image.svg" alt="登入頁主圖">
+           </div>
+      </div>
+      <!-- 單位名稱 -->
+      <div class="org-name">
+          <img src="assets/images/common_logo.png" alt="國立政治大學logo">
+          <span class="ch">國立政治大學</span> 
+          <span class="en">NATIONAL CHENGCHI UNIVERSITY</span>
+      </div>
+  </div>
+	</body>
+</html>

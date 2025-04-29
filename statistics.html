@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <title>政大高教深耕計畫專案管考平台</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="政大高教深耕計畫專案管考平台,政大,高等教育,政大高教深耕計畫">
+    <meta name="description" content="政大高教深耕計畫專案管考平台" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta property="og:site_name" content="政大高教深耕計畫專案管考平台" />
+    <meta property="og:image" content="assets/images/fb-img.png" />
+    <!--分享設定-->
+    <link rel="icon" href="assets/images/favicon.png">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="assets/vendor/bootstrap-5.3.3/dist/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="assets/vendor/fontawesome-free-6.5.2-web/css/all.min.css">
+    <!-- 自訂 -->
+    <link rel="stylesheet" href="assets/style/main.css">
+    <link rel="stylesheet-disabled" href="assets/style/login.css">
+    <!-- flatpickr -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/zh.js"></script>
+    <!-- script 開始 -->
+    <script src="assets/js/jquery-3.7.1.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.js"></script>
+    <script src="assets/js/jquery-ui.js"></script>
+    <script src="assets/js/echarts.js"></script><!--圖表-->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script><!--圖表-->
+    <script src="assets/js/footable.js"></script><!--圖表-->
+    <script src="assets/js/script.js"></script><!--自訂-->
+    <!-- script 結束 -->
+
+</head>
+
+	<body>
+		<div class="wrapper">
+			<!-- 版頭開始 -->
+			<div class="top position-fixed w-100">
+				<div class="header">
+					<h3 class="start brand-name"><a href="index.html" title="回首頁">政大高教深耕計畫<br
+								class="d-inline d-sm-none">專案管考平台</a></h3>
+					<div class="header-end hstack gap-2 gap-sm-3">
+						<div class="font-size-wrapper hstack gap-1 me-2">
+							<span class="me-1">字級</span>
+							<div class="font-size-filter">
+								<input type="radio" class="fontSize-lg" name="fontSize" id="fontSize-lg" hidden>
+								<label for="fontSize-lg">大</label>
+							</div>
+							<div class="font-size-filter">
+								<input type="radio" class="fontSize-md" name="fontSize" id="fontSize-md" hidden checked>
+								<label for="fontSize-md">中</label>
+							</div>
+							<div class="font-size-filter">
+								<input type="radio" class="fontSize-sm" name="fontSize" id="fontSize-sm" hidden>
+								<label for="fontSize-sm">小</label>
+							</div>
+						</div>
+						<div class="ms-2">XXX123，您好</div>
+						<a href="login.html" class="btn btn-outline-primary bg-white text-primary">登出</a>
+					</div>
+				</div>
+			</div>
+			<!-- 版頭結束 -->
+
+			<!-- Bottom -->
+			<div class="bottom">
+				<!-----側邊選單開始----->
+				<button class="btn btn-primary sidebar-toggler"><span>menu</span><img
+						src="./assets/images/ic-arrow-right.svg" alt="icon"></button>
+				<aside class="sidebar scroll">
+					<!-- Menu -->
+					<ul class="menu">
+						<!-- 深耕辦公室專區 -->
+						<li>
+							<a href="#" class="children ">
+								<span>
+									<i class="ic menu-office"></i>
+									<span class="text">深耕辦公室專區</span>
+								</span>
+								<span class="children-arrow">
+									<span class="expanded-false text-grey-pale"><i
+											class="fa-solid fa-circle-plus"></i></span>
+									<span class="expanded-true text-primary"><i
+											class="fa-solid fa-circle-minus"></i></span>
+								</span>
+							</a>
+							<ul class="level-2">
+								<li><a href="XXX.html">提案期程設定</a></li>
+								<li><a href="XXX.html">執行填報期程設定</a></li>
+								<li><a href="statistics.html">新年度計畫設定</a></li>
+								<li><a href="XXX.html">新年度提案審查</a></li>
+								<li><a href="XXX.html">經費執行進度審查</a></li>
+								<li><a href="XXX.html">計畫經費配置</a></li>
+								<li><a href="XXX.html">計畫成果審查</a></li>
+								<li><a href="XXX.html">計畫成員年資查詢</a></li>
+								<li><a href="XXX.html">人力續聘審查</a></li>
+								<li><a href="XXX.html">全校深耕計畫關鍵指標審查</a></li>
+								<li><a href="XXX.html">經費變更審查</a></li>
+								<li><a href="XXX.html">預算期程變更審查</a></li>
+								<li><a href="XXX.html">報表查詢</a></li>
+							</ul>
+						</li>
+						<!-- 計畫單位專區 -->
+						<li>
+							<a href="#" class="children ">
+								<span>
+									<i class="ic menu-plan"></i>
+									<span class="text">計畫單位專區</span>
+								</span>
+								<span class="children-arrow">
+									<span class="expanded-false text-grey-pale"><i
+											class="fa-solid fa-circle-plus"></i></span>
+									<span class="expanded-true text-primary"><i
+											class="fa-solid fa-circle-minus"></i></span>
+								</span>
+							</a>
+							<ul class="level-2">
+								<li><a href="projects-proposal.html" class="">計畫提案管理</a></li>
+								<li><a href="projects-fund-add.html" class="">經費執行進度填報</a></li>
+								<li><a href="XXX.html">計畫成果填</a></li>
+								<li><a href="XXX.html">計畫成員年資確認</a></li>
+								<li><a href="XXX.html">人力續聘調查</a></li>
+								<li><a href="XXX.html">計畫經費變更</a></li>
+								<li><a href="XXX.html">預算期程變更</a></li>
+							</ul>
+						</li>
+						<!-- 人事主計專區 -->
+						<li>
+							<a href="#" class="children ">
+								<span>
+									<i class="ic menu-money"></i>
+									<span class="text">人事主計專區</span>
+								</span>
+								<span class="children-arrow">
+									<span class="expanded-false text-grey-pale"><i
+											class="fa-solid fa-circle-plus"></i></span>
+									<span class="expanded-true text-primary"><i
+											class="fa-solid fa-circle-minus"></i></span>
+								</span>
+							</a>
+							<ul class="level-2">
+								<li><a href="XXX.html">計畫經費審查</a></li>
+								<li><a href="XXX.html">計畫員額審查</a></li>
+								<li><a href="XXX.html">計畫成員年資審查</a></li>
+							</ul>
+						</li>
+						<!-- 成果指標專區 -->
+						<li>
+							<a href="#" class="children ">
+								<span>
+									<i class="ic menu-result"></i>
+									<span class="text">成果指標專區</span>
+								</span>
+								<span class="children-arrow">
+									<span class="expanded-false text-grey-pale"><i
+											class="fa-solid fa-circle-plus"></i></span>
+									<span class="expanded-true text-primary"><i
+											class="fa-solid fa-circle-minus"></i></span>
+								</span>
+							</a>
+							<ul class="level-2">
+								<li><a href="XXX.html">全校深耕計畫關鍵指標填報</a></li>
+								<li><a href="XXX.html">深耕計畫發展建議填報</a></li>
+							</ul>
+						</li>
+						<!-- 審查委員專區 -->
+						<li>
+							<a href="#" class="children ">
+								<span>
+									<i class="ic menu-member"></i>
+									<span class="text">審查委員專區</span>
+								</span>
+								<span class="children-arrow">
+									<span class="expanded-false text-grey-pale"><i
+											class="fa-solid fa-circle-plus"></i></span>
+									<span class="expanded-true text-primary"><i
+											class="fa-solid fa-circle-minus"></i></span>
+								</span>
+							</a>
+							<ul class="level-2">
+								<li><a href="XXX.html">計畫成果檢閱</a></li>
+							</ul>
+						</li>
+						<!-- 系統管理 -->
+						<li>
+							<a href="#" class="children ">
+								<span>
+									<i class="ic menu-system"></i>
+									<span class="text">系統管理</span>
+								</span>
+								<span class="children-arrow">
+									<span class="expanded-false text-grey-pale"><i
+											class="fa-solid fa-circle-plus"></i></span>
+									<span class="expanded-true text-primary"><i
+											class="fa-solid fa-circle-minus"></i></span>
+								</span>
+							</a>
+							<ul class="level-2">
+								<li><a href="XXX.html">系統公告</a></li>
+								<li><a href="XXX.html">量化及績效指標維護</a></li>
+								<li><a href="XXX.html">新舊計畫代碼關聯</a></li>
+								<li><a href="XXX.html">使用者管理</a></li>
+								<li><a href="XXX.html">角色及功能維護</a></li>
+								<li><a href="XXX.html">系統LOG紀錄</a></li>
+								<li><a href="XXX.html">使用者軌跡</a></li>
+							</ul>
+						</li>
+					</ul>
+				</aside>
+				<!-----側邊選單結束----->
+
+				<!-----主要內容開始----->
+				<main class="main ">
+						<div class="breadcrumb">
+    <li class="breadcrumb-item"><a href="index.html">首頁</a></li>
+    <li class="breadcrumb-item">深耕辦公室專區</li>
+    <li class="breadcrumb-item active" aria-current="page">新年度計畫設定</li>
+</div>
+<div class="content">
+    <div class="row g-4">
+        <div class="col-12">
+            <div class="block bg-sky-blue-light pb-3">
+                <div class="block-head pb-0">
+                    <h4 class="block-head-title mb-0">統計報表查詢</h4>
+                    <a href="#" class="btn btn-info btn-xs px-3 py-2">更多</a>
+                </div>
+                <div class="block-body">
+                    <hr class="mt-2">
+                    <div class="row gy-3">
+                        <div class="col-md-3 col-xxl-3">
+                            <div class="d-flex align-items-center flex-wrap flex-sm-nowrap">
+                                <label for="statistics-year" class="form-label mb-2 mb-sm-0">年度</label>
+                                <select class="form-select" id="statistics-year">
+                                    <option value="">114</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-8 col-xxl-6">
+                            <div class="d-flex align-items-center flex-wrap flex-sm-nowrap">
+                                <label for="statistics-unit" class="form-label mb-2 mb-sm-0">執行單位</label>
+                                <select class="form-select me-0 me-sm-3 mb-2 mb-sm-0" id="statistics-unit">
+                                    <option value="">請選擇所屬單位</option>
+                                </select>
+                                <label for="statistics-branch" class="form-label mb-0 visually-hidden">分部</label>
+                                <select class="form-select" id="statistics-branch">
+                                    <option value="">請選擇</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="block bg-sky-blue-light pb-3">
+                <div class="block-head pb-0">
+                    <h4 class="block-head-title mb-0">廣義執行率</h4>
+                    <button type="button" class="btn btn-white me-auto" data-bs-toggle="tooltip"
+                        data-bs-placement="right" data-bs-custom-class="custom-tooltip" data-bs-title="說明說明說明">
+                        <img src="./assets/images/ic-info.svg" alt="icon">
+                    </button>
+                    <a href="#" class="btn btn-info btn-xs px-3 py-2">更多</a>
+                </div>
+                <div class="block-body">
+                    <hr class="mt-2">
+                    <div class="row g-3">
+                        <div class="col-xl-6">
+                            <div class="light-container px-3 px-sm-4 py-2 py-sm-3 h-100 flex-nowrap" data-con="number">
+                                <p class="mb-0">原始核定</p>
+                                <button type="button" class="btn btn-white" data-bs-toggle="tooltip"
+                                    data-bs-placement="right" data-bs-custom-class="custom-tooltip"
+                                    data-bs-title="說明說明說明">
+                                    <img src="./assets/images/ic-info.svg" alt="icon">
+                                </button>
+                                <div class="text-green text-center fw-bold fs-1 mb-0 ms-auto w-100">32.5 
+                                    <span class="fs-3 w-auto">%</span></div>
+                            </div>
+                        </div>
+                        <div class="col-xl-6">
+                            <div class="light-container px-3 px-sm-4 py-2 py-sm-3 h-100 flex-nowrap" data-con="number">
+                                <p class="mb-0">最新核定</p>
+                                <button type="button" class="btn btn-white" data-bs-toggle="tooltip"
+                                    data-bs-placement="right" data-bs-custom-class="custom-tooltip"
+                                    data-bs-title="說明說明說明">
+                                    <img src="./assets/images/ic-info.svg" alt="icon">
+                                </button>
+                                <div class="text-blue text-center fw-bold fs-1 mb-0 ms-auto w-100">32.5
+                                    <span class="fs-3 w-auto">%</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="block bg-sky-blue-light pb-3">
+                <div class="block-head pb-0 flex-wrap">
+                    <h4 class="block-head-title mb-0">總經費即時統計</h4>
+                    <button type="button" class="btn btn-white me-auto" data-bs-toggle="tooltip"
+                        data-bs-placement="right" data-bs-custom-class="custom-tooltip" data-bs-title="說明說明說明">
+                        <img src="./assets/images/ic-info.svg" alt="icon">
+                    </button>
+                    <p class="mb-0"><span class="text-blue">資料來源：</span>來自校內主計系統介接</p>
+                </div>
+                <div class="block-body">
+                    <hr class="mt-2">
+                    <ul class="sum">
+                        <li class="sum-item">
+                            <div class="sum-container">
+                                <p class="sum-title">總核定金額</p>
+                                <span class="text-green fw-bold fs-4">1,000,000</span>
+                            </div>
+                        </li>
+                        <li class="sum-item">=</li>
+                        <li class="sum-item">
+                            <div class="sum-container">
+                                <p class="sum-title">總實支數</p>
+                                <span class="text-teal fw-bold fs-4">1,000,000</span>
+                            </div>
+                        </li>
+                        <li class="sum-item">+</li>
+                        <li class="sum-item">
+                            <div class="sum-container">
+                                <p class="sum-title">請購未銷數</p>
+                                <span class="text-teal fw-bold fs-4">2,000,000</span>
+                            </div>
+                        </li>
+                        <li class="sum-item">+</li>
+                        <li class="sum-item">
+                            <div class="sum-container">
+                                <p class="sum-title">核銷簽證數</p>
+                                <span class="text-teal fw-bold fs-4">1,000,000</span>
+                            </div>
+                        </li>
+                        <li class="sum-item">+</li>
+                        <li class="sum-item">
+                            <div class="sum-container">
+                                <p class="sum-title">總暫付數</p>
+                                <span class="text-teal fw-bold fs-4">3,000,000</span>
+                            </div>
+                        </li>
+                        <li class="sum-item">+</li>
+                        <li class="sum-item">
+                            <div class="sum-container">
+                                <p class="sum-title">尚可用經費</p>
+                                <span class="text-teal fw-bold fs-4">1,000,000</span>
+                            </div>
+                        </li>
+                    </ul>
+                    <div id="chart-sum" class="bg-white rounded p-3" style="width: 100%; height:600px;"></div>
+                    <div class="d-flex pt-3">
+                        <span class="text-blue ms-auto">查詢時間：</span>2025/4/17
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="block bg-sky-blue-light pb-3">
+                <div class="block-head pb-0">
+                    <h4 class="block-head-title mb-0">最新核定經費配置</h4>
+                </div>
+                <div class="block-body">
+                    <hr class="mt-2">
+                    <div id="chart-distribute" class="bg-white rounded-top p-3" style="width: 100%; height:600px;"></div>
+                    <table class="table table-bordered table-striped table-outlineX table-rwd mb-0 h-100"
+                        data-style="cost">
+                        <thead class="sticky-top text-center">
+                            <tr>
+                                <th class="text-nowrap">項目</th>
+                                <th class="text-nowrap">原始核定</th>
+                                <th>最新核定</th>
+                                <th>已變更</th>
+                                <th>實支數</th>
+                                <th>核銷中</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th data-th="項目">人事費</th>
+                                <td data-th="原始核定">1,256,500</td>
+                                <td data-th="最新核定">1,256,500</td>
+                                <td data-th="已變更">-</td>
+                                <td data-th="實支數">162,099</td>
+                                <td data-th="核銷中">-</td>
+                            </tr>
+                            <tr>
+                                <th data-th="項目">業務費 1</th>
+                                <td data-th="原始核定">324,000</td>
+                                <td data-th="最新核定">354,000</td>
+                                <td data-th="已變更">30,000</td>
+                                <td data-th="實支數">12,000</td>
+                                <td data-th="核銷中">-</td>
+                            </tr>
+                            <tr>
+                                <th data-th="項目">業務費 2</th>
+                                <td data-th="原始核定">672,000</td>
+                                <td data-th="最新核定">642,000</td>
+                                <td data-th="已變更">-30,000</td>
+                                <td data-th="實支數">51,783</td>
+                                <td data-th="核銷中">-</td>
+                            </tr>
+                            <tr>
+                                <th data-th="項目">國外差旅費</th>
+                                <td data-th="原始核定">120,000</td>
+                                <td data-th="最新核定">120,000</td>
+                                <td data-th="已變更">-</td>
+                                <td data-th="實支數">-</td>
+                                <td data-th="核銷中">-</td>
+                            </tr>
+                            <tr>
+                                <th data-th="項目">資本門</th>
+                                <td data-th="原始核定">295,000</td>
+                                <td data-th="最新核定">295,000</td>
+                                <td data-th="已變更">-</td>
+                                <td data-th="實支數">-</td>
+                                <td data-th="核銷中">295,000</td>
+                            </tr>
+                            <tr>
+                                <th data-th="項目">總計</th>
+                                <td data-th="原始核定">2,667,500</td>
+                                <td data-th="最新核定">2,667,500</td>
+                                <td data-th="已變更">-</td>
+                                <td data-th="實支數">225,882</td>
+                                <td data-th="核銷中">295,000</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    const allCharts = [];
+
+    function getSumResponsiveLegend() {
+        if (window.innerWidth < 1600) {
+            return {
+                orient: 'horizontal',
+                left: 'center',
+                top: 8,
+                textStyle: { fontSize: 16 }
+            };
+        } else {
+            return {
+                orient: 'vertical',
+                left: 'left',
+                top: 0,
+                padding: [20, 0, 0, 20],
+                itemGap: 15,
+                textStyle: { fontSize: 16 }
+            };
+        }
+    }
+
+    function getResponsiveCenter() {
+        return window.innerWidth < 1600 ? ['50%', '60%'] : ['50%', '50%'];
+    }
+    function getResponsiveRadius() {
+        return window.innerWidth < 500 ? '90%' : '70%';
+    }
+    function getResponsiveLabel() {
+        return window.innerWidth < 768 ? 'inside' : 'outside';
+    }
+
+
+    // 初始化 chartSum
+    const chartSum = echarts.init(document.getElementById('chart-sum'));
+    const optionSum = {
+        tooltip: { trigger: 'item' },
+        legend: getSumResponsiveLegend(),
+        series: [{
+            name: '經費構成',
+            type: 'pie',
+            radius: getResponsiveRadius(),
+            avoidLabelOverlap: false,
+            center: getResponsiveCenter(),
+            label: {
+                position: getResponsiveLabel(),
+                fontSize: 14,
+                lineHeight: 22,
+                formatter: '{b}\n{d}%\n{c} 元',
+                show:true
+            },
+            labelLine: { show: true, length: 20, length2: 10 },
+            emphasis: {
+                label: {
+                    show: true,
+                    fontSize: 16,
+                    fontWeight: 'bold'
+                }
+            },
+            color: ['#FF6B6B', '#33C1C9', '#FFB638', '#2C6DD2', '#28B44A'],
+            data: [
+                { value: 600000, name: '總實支數' },
+                { value: 200000, name: '請購未銷數' },
+                { value: 100000, name: '核銷簽證數' },
+                { value: 300000, name: '總暫付數' },
+                { value: 100000, name: '尚可用經費' }
+            ]
+        }]
+    };
+    chartSum.setOption(optionSum);
+    allCharts.push({ chart: chartSum, type: 'pie' }); // ⭐️記錄
+
+    // 初始化 chartDistribute
+    const chartDistribute = echarts.init(document.getElementById('chart-distribute'));
+    const optionDistribute = {
+        tooltip: { trigger: 'item' },
+        legend: getSumResponsiveLegend(),
+        series: [{
+            name: '經費構成',
+            type: 'pie',
+            radius: getResponsiveRadius(),
+            avoidLabelOverlap: false,
+            center: getResponsiveCenter(),
+            label: {
+                position: getResponsiveLabel(),
+                show: true,
+                fontSize: 14,
+                lineHeight: 22,
+                formatter: '{b}\n{d}%\n{c} 元'
+            },
+            labelLine: { show: true, length: 20, length2: 10 },
+            emphasis: {
+                label: {
+                    show: true,
+                    fontSize: 16,
+                    fontWeight: 'bold'
+                }
+            },
+            color: ['#FF6B6B', '#33C1C9', '#FFB638', '#2C6DD2', '#28B44A'],
+            data: [
+                { value: 1256500, name: '人事費' },
+                { value: 354000, name: '業務費1' },
+                { value: 642000, name: '業務費2' },
+                { value: 120000, name: '國外差旅費' },
+                { value: 295000, name: '資本門' }
+            ]
+        }]
+    };
+    chartDistribute.setOption(optionDistribute);
+    allCharts.push({ chart: chartDistribute, type: 'pie' }); // ⭐️記錄
+
+    // Resize時，同時更新legend與center
+    window.addEventListener('resize', function () {
+        allCharts.forEach(({ chart, type }) => {
+            if (type === 'pie') {
+                chart.setOption({
+                    legend: getSumResponsiveLegend(),
+                    series: [{
+                        center: getResponsiveCenter(),
+                        radius: getResponsiveRadius(),
+                        label: { position: getResponsiveLabel() }
+                    }]
+                });
+            }
+            chart.resize();
+        });
+    });
+</script>
+				</main>
+			</div>
+			<!-----主要內容結束----->
+		</div>
+		<a href="#" class="goTop btn btn-info">TOP</a>
+
+	</body>
+
+</html>

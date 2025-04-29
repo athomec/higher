@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <title>政大高教深耕計畫專案管考平台</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="政大高教深耕計畫專案管考平台,政大,高等教育,政大高教深耕計畫">
+    <meta name="description" content="政大高教深耕計畫專案管考平台" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta property="og:site_name" content="政大高教深耕計畫專案管考平台" />
+    <meta property="og:image" content="../assets/images/fb-img.png" />
+    <!--分享設定-->
+    <link rel="icon" href="../assets/images/favicon.png">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="../assets/vendor/bootstrap-5.3.3/dist/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="../assets/vendor/fontawesome-free-6.5.2-web/css/all.min.css">
+    <!-- 自訂 -->
+    <link rel="stylesheet" href="../assets/style/main.css">
+    <link rel="stylesheet-disabled" href="../assets/style/login.css">
+    <!-- flatpickr -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/zh.js"></script>
+    <!-- script 開始 -->
+    <script src="../assets/js/jquery-3.7.1.min.js"></script>
+    <script src="../assets/js/bootstrap.bundle.js"></script>
+    <script src="../assets/js/jquery-ui.js"></script>
+    <script src="../assets/js/echarts.js"></script><!--圖表-->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script><!--圖表-->
+    <script src="../assets/js/footable.js"></script><!--圖表-->
+    <script src="../assets/js/script.js"></script><!--自訂-->
+    <!-- script 結束 -->
+
+</head>
+    <body>
+        <div class="container py-5">
+            <p class=""><i class="fa-solid fa-circle-chevron-left"></i> <a href="../_components.html" class="text-body">回元件表</a></p>
+            <div class="bg-white rounded-3 my-5">
+                
+            <h4 class="p-5 border-bottom">表單</h4>
+            <div class="p-5">
+                <div class="d-grid gap-5">
+                    <div class="item">
+                        <label for="" class="form-label">複選項目</label>
+                        <div>
+                            <div class="form-check form-check-inline">
+                                <input type="checkbox" class="form-check-input" id="checkbox0" checked>
+                                <label for="checkbox0" class="form-check-label">專案管考平台</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input type="checkbox" class="form-check-input" id="checkbox1">
+                                <label for="checkbox1" class="form-check-label">專案管考平台</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input type="checkbox" class="form-check-input" id="checkbox2">
+                                <label for="checkbox2" class="form-check-label">專案管考平台</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input type="checkbox" class="form-check-input" id="checkbox3">
+                                <label for="checkbox3" class="form-check-label">專案管考平台</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <label for="" class="form-label">單選項目</label>
+                        <div>
+                            <div class="form-check form-check-inline">
+                                <input type="radio" class="form-check-input" id="radio0" name="[radio]" checked>
+                                <label for="radio0" class="form-check-label">專案管考平台</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input type="radio" class="form-check-input" id="radio1" name="[radio]">
+                                <label for="radio1" class="form-check-label">專案管考平台</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input type="radio" class="form-check-input" id="radio2" name="[radio]">
+                                <label for="radio2" class="form-check-label">專案管考平台</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input type="radio" class="form-check-input" id="radio3" name="[radio]">
+                                <label for="radio3" class="form-check-label">專案管考平台</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <label for="" class="form-label">小段小段</label>
+                        <div class="hstack flex-wrap flex-md-nowrap gap-2">
+                            <select name="" id="" class="form-select">
+                                <option value="高雄市">高雄市</option>
+                            </select>
+                            <span class="text-nowrap">縣市</span>
+                            <select name="" id="" class="form-select">
+                                <option value="行政區">行政區</option>
+                            </select>
+                            <span class="text-nowrap">行政區</span>
+                            <select name="" id="" class="form-select">
+                                <option value="小段小段小段">小段小段小段</option>
+                            </select>
+                            <span class="text-nowrap">小段小段</span>
+                            <input type="text" class="form-control" value="12345678">
+                        </div>
+                    </div>
+                    <div class="item">
+                        <label for="" class="form-label">附件</label>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="file-upload">
+                                    <input type="file" name="" id="file-upload-A" hidden>
+                                    <label for="file-upload-A" class="btn btn-blue w-100"><i
+                                            class="fa-solid fa-cloud-arrow-up"></i>新增附件</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="row gy-4">
+                            <div class="col-lg-6">
+                                <label for="" class="form-label">複選附件</label>
+                                <!-- File upload -->
+                                <div class="file-upload mb-3">
+                                    <input type="file" name="" id="file-upload-A" hidden>
+                                    <label for="file-upload-A" class="btn btn-file w-100"><i
+                                            class="fa-solid fa-cloud-arrow-up"></i>新增附件</label>
+                                </div>
+                                <!-- Files -->
+                                <div class="d-grid gap-2">
+                                    <div class="file">
+                                        <!-- Start -->
+                                        <div class="start">
+                                            <i class="ic-file text-primary">DOC</i>
+                                            二期高教深耕計畫第一年(112年)
+                                        </div>
+                                        <!-- End -->
+                                        <button class="end | btn-icon text-primary">
+                                            <i class="fa-solid fa-xmark"></i>
+                                        </button>
+                                    </div>
+                                    <div class="file">
+                                        <!-- Start -->
+                                        <div class="start">
+                                            <i class="ic-file text-danger">PDF</i>
+                                            二期高教深耕計畫第一年(112年)
+                                        </div>
+                                        <!-- End -->
+                                        <button class="end | btn-icon text-primary">
+                                            <i class="fa-solid fa-xmark"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <label for="" class="form-label">單選附件</label>
+                                <!-- Files -->
+                                <div class="file">
+                                    <!-- Start -->
+                                    <div class="start">
+                                        <i class="ic-file text-success">XLS</i>
+                                        二期高教深耕計畫第一年(112年)
+                                    </div>
+                                    <!-- End -->
+                                    <button class="end | btn-icon text-primary">
+                                        <i class="fa-solid fa-xmark"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <label for="" class="form-label">多行欄位</label>
+                        <textarea name="" id="" class="form-control"
+                            rows="5">政大一直以來引領臺灣人文社科學術發展，切合國家重要議題致力於創新與跨領域研究，創造改變社會的力量與人類生活價值，進而影響世界。政大 校務發展計畫暨高教深耕計畫，由高教深耕計畫辦公室統籌，協助計畫推動、行政管考等相關事項，四大推動推動方向為「落實教學創新、提升教學品質」、「發展政大特色、形塑學術典範」、「提升高教公共性、創造知識共享」、「善盡大學社會責任、發展文化智帶」。完整勾畫政大未來五年校務發展藍圖，期能培育跨時代 的精英人才、發展前瞻的跨領域研究，提升國際競爭力。</textarea>
+                    </div>
+                    <div class="item">
+                        <label for="" class="form-label">單個欄位</label>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="item">
+                        <label for="" class="form-label">複合欄位</label>
+                        <div class="row gy-2 gy-md-3">
+                            <div class="col-md-6">
+                                <input type="text" class="form-control">
+                            </div>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control date date-range-picker" placeholder="選擇日期區間">
+                            </div>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control date date-range-picker" placeholder="選擇日期區間">
+                            </div>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control date date-range-picker" placeholder="選擇日期區間">
+                            </div>
+                        </div>
+                        <script>
+                            document.querySelectorAll('.date-range-picker').forEach(function (input) {
+                                    flatpickr(input, {
+                                        mode: "range",
+                                        dateFormat: "Y-m-d",
+                                        locale: Object.assign({}, flatpickr.l10ns.zh, {
+                                            rangeSeparator: " ~ "
+                                        })
+                                    });
+                                });
+                        </script>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </body>
+</html>

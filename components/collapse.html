@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <title>政大高教深耕計畫專案管考平台</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="政大高教深耕計畫專案管考平台,政大,高等教育,政大高教深耕計畫">
+    <meta name="description" content="政大高教深耕計畫專案管考平台" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta property="og:site_name" content="政大高教深耕計畫專案管考平台" />
+    <meta property="og:image" content="../assets/images/fb-img.png" />
+    <!--分享設定-->
+    <link rel="icon" href="../assets/images/favicon.png">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="../assets/vendor/bootstrap-5.3.3/dist/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="../assets/vendor/fontawesome-free-6.5.2-web/css/all.min.css">
+    <!-- 自訂 -->
+    <link rel="stylesheet" href="../assets/style/main.css">
+    <link rel="stylesheet-disabled" href="../assets/style/login.css">
+    <!-- flatpickr -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/zh.js"></script>
+    <!-- script 開始 -->
+    <script src="../assets/js/jquery-3.7.1.min.js"></script>
+    <script src="../assets/js/bootstrap.bundle.js"></script>
+    <script src="../assets/js/jquery-ui.js"></script>
+    <script src="../assets/js/echarts.js"></script><!--圖表-->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script><!--圖表-->
+    <script src="../assets/js/footable.js"></script><!--圖表-->
+    <script src="../assets/js/script.js"></script><!--自訂-->
+    <!-- script 結束 -->
+
+</head>
+    <body>
+        <div class="container py-5">
+            <p class=""><i class="fa-solid fa-circle-chevron-left"></i> <a href="../_components.html" class="text-body">回元件表</a></p>
+            <div class="bg-white rounded-3 my-5">
+                
+      <h4 class="p-5 border-bottom">塌縮</h4>
+      <div class="p-5">
+        <div class="d-grid gap-5">
+            <div class="item">
+              <code>點選範圍只限icon</code>
+              <!-- Block bar + collapse -->
+              <div class="block-bar">
+                <!-- Start -->
+                <div class="start">
+                  <h6 class="block-bar-title">人事費</h6>
+                </div>
+                <!-- End -->
+                <div class="end">
+                  <div class="fs-15 me-3">
+                    申請金額：<span class="text-highlight fs-18 fw-bold">1,231,234</span> 元
+                  </div>
+                  <!-- Collapse icon -->
+                  <a href="#baCollapse" class="collapse-icon " data-bs-toggle="collapse" aria-expanded="true">
+                      <span class="expanded-false"><i class="fa-solid fa-circle-plus"></i></span>
+                      <span class="expanded-true opacity-75"><i class="fa-solid fa-circle-minus"></i></span>
+                  </a>
+                </div>
+              </div>
+              <div class="collapse show" id="baCollapse">
+                XXX
+              </div>
+            </div>
+            <div class="item">
+              <code>點選範圍擴大至整條Bar，collapse-icon加上.stretched-link即可</code>
+              <!-- Block bar + collapse -->
+              <div class="block-bar">
+                <!-- Start -->
+                <div class="start">
+                  <h6 class="block-bar-title">人事費</h6>
+                </div>
+                <!-- End -->
+                <div class="end">
+                  <div class="fs-15 me-3">
+                    申請金額：<span class="text-highlight fs-18 fw-bold">1,231,234</span> 元
+                  </div>
+                  <!-- Collapse icon -->
+                  <a href="#bbCollapse" class="collapse-icon stretched-link" data-bs-toggle="collapse" aria-expanded="true">
+                      <span class="expanded-false"><i class="fa-solid fa-circle-plus"></i></span>
+                      <span class="expanded-true opacity-75"><i class="fa-solid fa-circle-minus"></i></span>
+                  </a>
+                </div>
+              </div>
+              <div class="collapse show" id="bbCollapse">
+                XXX
+              </div>
+            </div>
+            <div class="item">
+              <!-- Block bar + collapse -->
+              <div class="block-bar">
+                <!-- Start -->
+                <div class="start flex-wrap">
+                  <h6 class="block-bar-title">目標推動績效-自動化指標 </h6>
+                  <small>結果、關鍵績效與故事設計—量化指標</small>
+                </div>
+                <!-- End -->
+                <div class="end">
+                  <span class="position-relative z-2">
+                    <a href="#" class="text-yellow fs-4" data-bs-toggle="tooltip" data-bs-html="true" data-bs-custom-class="text-start" data-bs-title="
+                    1. 質化指標：例如帶來的效益、解決了哪些問題、突破了那些框架或障礙，通常是比較質化的描述。<br/>
+                    2. 亮點故事：可能是有哪些更大的影響或故事，能夠引人記憶，感受到這各計畫存在的明顯價值。">
+                      <span><i class="fa-solid fa-circle-question"></i></span>
+                    </a>
+                  </span>
+                  <!-- Collapse icon -->
+                  <a href="#abCollapse" class="collapse-icon stretched-link" data-bs-toggle="collapse" aria-expanded="true">
+                      <span class="expanded-false"><i class="fa-solid fa-circle-plus"></i></span>
+                      <span class="expanded-true opacity-75"><i class="fa-solid fa-circle-minus"></i></span>
+                  </a>
+                </div>
+              </div>
+              <div class="collapse show" id="abCollapse">
+                XXX
+              </div>
+            </div>
+            <div class="item">
+              <div class="block p-4 bg-grey-light">
+                <ul class="list-group list-group-flush" id="accordionA">
+                  <li class="list-group-item bg-transparent px-0 py-2">
+                    <div class="flex-start-end mb-1 position-relative">
+                      <h5 class="mb-0">申辦流程相關資訊</h5>
+                      <a href="#aaCollapse" class="collapse-icon stretched-link" data-bs-toggle="collapse" aria-expanded="true">
+                        <span class="expanded-false text-info"><i class="fa-solid fa-circle-plus"></i></span>
+                        <span class="expanded-true text-primary"><i class="fa-solid fa-circle-minus"></i></span>
+                      </a>
+                    </div>
+                    <div id="aaCollapse" class="collapse show"  data-bs-parent="#accordionA">
+                      <div class="bg-sky-blue-light rounded-2 p-4">
+                        申請服務案件提供關鍵字、類別分類、智能客服等查詢方式，進行線上作業流程包含服務宣告(個資宣告)身分驗證(我的e政府、自然人、FB、GOOGLE、LINE、健保卡等帳號)、填寫表單(部分案件整合MYDATA)表單確認、案件成案、發送mail及推播通知，可利用案件編號+身分證後四碼進行案件進度查詢。
+                      </div>
+                    </div>
+                  </li>
+                  <li class="list-group-item bg-transparent px-0 py-2">
+                    <div class="flex-start-end mb-1 position-relative">
+                      <h5 class="mb-0">申辦流程相關資訊</h5>
+                      <a href="#acCollapse" class="collapse-icon stretched-link" data-bs-toggle="collapse" aria-expanded="false">
+                        <span class="expanded-false text-info"><i class="fa-solid fa-circle-plus"></i></span>
+                        <span class="expanded-true text-primary"><i class="fa-solid fa-circle-minus"></i></span>
+                    </a>
+                    </div>
+                    <div id="acCollapse" class="collapse"  data-bs-parent="#accordionA">
+                      <div class="bg-sky-blue-light rounded-2 p-4">
+                        申請服務案件提供關鍵字、類別分類、智能客服等查詢方式，進行線上作業流程包含服務宣告(個資宣告)身分驗證(我的e政府、自然人、FB、GOOGLE、LINE、健保卡等帳號)、填寫表單(部分案件整合MYDATA)表單確認、案件成案、發送mail及推播通知，可利用案件編號+身分證後四碼進行案件進度查詢。
+                      </div>
+                    </div>
+                  </li>
+                  <li class="list-group-item bg-transparent px-0 py-2">
+                    <div class="flex-start-end mb-1 position-relative">
+                      <h5 class="mb-0">申辦流程相關資訊</h5>
+                      <a href="#adCollapse" class="collapse-icon stretched-link" data-bs-toggle="collapse" aria-expanded="false">
+                        <span class="expanded-false text-info"><i class="fa-solid fa-circle-plus"></i></span>
+                        <span class="expanded-true text-primary"><i class="fa-solid fa-circle-minus"></i></span>
+                    </a>
+                    </div>
+                    <div id="adCollapse" class="collapse"  data-bs-parent="#accordionA">
+                      <div class="bg-sky-blue-light rounded-2 p-4">
+                        申請服務案件提供關鍵字、類別分類、智能客服等查詢方式，進行線上作業流程包含服務宣告(個資宣告)身分驗證(我的e政府、自然人、FB、GOOGLE、LINE、健保卡等帳號)、填寫表單(部分案件整合MYDATA)表單確認、案件成案、發送mail及推播通知，可利用案件編號+身分證後四碼進行案件進度查詢。
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+        </div>
+        
+      </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <title>政大高教深耕計畫專案管考平台</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="政大高教深耕計畫專案管考平台,政大,高等教育,政大高教深耕計畫">
+    <meta name="description" content="政大高教深耕計畫專案管考平台" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta property="og:site_name" content="政大高教深耕計畫專案管考平台" />
+    <meta property="og:image" content="../assets/images/fb-img.png" />
+    <!--分享設定-->
+    <link rel="icon" href="../assets/images/favicon.png">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="../assets/vendor/bootstrap-5.3.3/dist/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="../assets/vendor/fontawesome-free-6.5.2-web/css/all.min.css">
+    <!-- 自訂 -->
+    <link rel="stylesheet" href="../assets/style/main.css">
+    <link rel="stylesheet-disabled" href="../assets/style/login.css">
+    <!-- flatpickr -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/zh.js"></script>
+    <!-- script 開始 -->
+    <script src="../assets/js/jquery-3.7.1.min.js"></script>
+    <script src="../assets/js/bootstrap.bundle.js"></script>
+    <script src="../assets/js/jquery-ui.js"></script>
+    <script src="../assets/js/echarts.js"></script><!--圖表-->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script><!--圖表-->
+    <script src="../assets/js/footable.js"></script><!--圖表-->
+    <script src="../assets/js/script.js"></script><!--自訂-->
+    <!-- script 結束 -->
+
+</head>
+    <body>
+        <div class="container py-5">
+            <p class=""><i class="fa-solid fa-circle-chevron-left"></i> <a href="../_components.html" class="text-body">回元件表</a></p>
+            <div class="bg-white rounded-3 my-5">
+                
+<h4 class="p-5 border-bottom">圖表</h4>
+<div class="p-5">
+  <div class="">
+    <div class="item">
+      <div id="app" class="row g-3">
+        <div class="col-md-6 col-lg-3">
+          <div class="hstack gap-2">
+            <span class="text-nowrap">金額A項目</span>
+            <input type="text" class="form-control text-end" value="1,231,234">
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="hstack gap-2">
+            <span class="text-nowrap">金額A項目</span>
+            <input type="text" class="form-control text-end" value="1,231,234">
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="hstack gap-2">
+            <span class="text-nowrap">金額A項目</span>
+            <input type="text" class="form-control text-end" value="1,231,234">
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="hstack gap-2">
+            <span class="text-nowrap">金額A項目</span>
+            <input type="text" class="form-control text-end" value="1,231,234">
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="chart-header bg-blue">
+            <p>分項實支率</p>
+            <label for="chart-rate-select" class="form-label mb-0 visually-hidden">圖表</label>
+            <select class="form-select" id="chart-rate-select">
+              <option value="長條圖">長條圖</option>
+              <option value="圓餅圖">圓餅圖</option>
+            </select>
+          </div>
+          <div class="light-container rounded-top-0">
+            <div id="chart-rate" style="width: 100%; height:300px;"></div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="chart-header bg-blue">
+            <p>尚可用經費</p>
+            <label for="chart-fund-select" class="form-label mb-0 visually-hidden">圖表</label>
+            <select class="form-select" id="chart-fund-select">
+              <option value="圓餅圖">圓餅圖</option>
+              <option value="長條圖">長條圖</option>
+            </select>
+          </div>
+          <div class="light-container rounded-top-0">
+            <div id="chart-fund" style="width: 100%; height:300px;"></div>
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="chart-header bg-blue">
+            <p>每月執行比重</p>
+            <label for="chart-run-select" class="form-label mb-0 visually-hidden">圖表</label>
+            <select class="form-select" id="chart-run-select">
+              <option value="曲線趨勢分布圖">曲線趨勢分布圖 </option>
+              <option value="堆疊柱狀圖">堆疊柱狀圖 </option>
+            </select>
+          </div>
+          <div class="light-container rounded-top-0 py-3">
+            <div id="chart-run" style="width: 100%; height:580px;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script type="text/javascript">
+  const allCharts = [];
+
+  // 建立長條圖 Option
+  function createBarOption(categories, data, tooltipFormatter) {
+    return {
+      tooltip: {
+        trigger: 'item',
+        formatter: tooltipFormatter || (p => `${p.name} : ${p.value}`)
+      },
+      xAxis: { type: 'category', data: categories },
+      yAxis: { show: false },
+      series: [{ data: data, type: 'bar' }]
+    };
+  }
+
+  // 建立圓餅圖 Option
+  function createPieOption(categories, data, tooltipFormatter) {
+    const isSmallScreen = window.innerWidth < 1600;
+
+    return {
+      tooltip: {
+        trigger: 'item',
+        formatter: tooltipFormatter || (p => `${p.name} : ${p.value}`)
+      },
+      series: [{
+        type: 'pie',
+        radius: '60%',
+        center: isSmallScreen ? ['50%', '60%'] : ['50%', '50%'], // 💡 自動調整圓心
+        data: categories.map((name, i) => ({
+          name: name,
+          value: data[i]
+        })),
+        label: {
+          position: getResponsiveLabel(),
+        }
+      }],
+      legend: getResponsiveLegend(),
+    };
+  }
+
+  function getResponsiveLegend() {
+    if (window.innerWidth < 1600) {
+      return {
+        orient: 'horizontal',
+        left: 'center',
+        top: 8
+      };
+    } else {
+      return {
+        orient: 'vertical',
+        left: 'left',
+        top: 0,
+        padding: [30, 0, 0, 20]
+      };
+    }
+  }
+  function getResponsiveLabel() {
+    return window.innerWidth < 500 ? 'inside' : 'outside';
+  }
+  // 初始化一個可由 select 切換的 ECharts
+  function setupToggleChart(domId, selectId, optionsMap, defaultKey) {
+    const chart = echarts.init(document.getElementById(domId));
+    let currentKey = defaultKey;
+
+    chart.setOption(optionsMap[currentKey]);
+    allCharts.push({ chart, optionsMap, currentKey });
+
+    document.getElementById(selectId)
+      .addEventListener('change', e => {
+        currentKey = e.target.value;
+        chart.setOption(optionsMap[currentKey], true);
+        const chartItem = allCharts.find(c => c.chart === chart);
+        if (chartItem) chartItem.currentKey = currentKey;
+      });
+  }
+
+  // 第一組：分項實支 //
+  const categories1 = ['人事費', '業務費 1', '業務費 2', '國外差旅費', '資本門'];
+  const data1 = [12.9, 3.7, 7.71, 5, 5];
+  const bar1 = createBarOption(
+    categories1, data1,
+    p => `${p.name} : ${p.value}%`
+  );
+  const pie1 = createPieOption(
+    categories1, data1,
+    p => `${p.name} : ${p.value}%`
+  );
+  setupToggleChart(
+    'chart-rate',
+    'chart-rate-select',
+    { '長條圖': bar1, '圓餅圖': pie1 },
+    '長條圖'
+  );
+
+  //  第二組：可用經費 //
+  const data2 = [1094401, 342000, 590217, 120000, 36000];
+  const bar2 = createBarOption(
+    categories1, data2,
+    p => `${p.name} : ${p.value.toLocaleString()}`
+  );
+  const pie2 = createPieOption(
+    categories1, data2,
+    p => `${p.name} : ${p.value.toLocaleString()} (${p.percent}%)`
+  );
+  setupToggleChart(
+    'chart-fund',
+    'chart-fund-select',
+    { '長條圖': bar2, '圓餅圖': pie2 },
+    '圓餅圖'
+  );
+
+  //  第三組：每月趨勢 vs 堆疊柱狀  //
+  // 曲線趨勢分布
+  const stackArea = {
+    tooltip: {
+      trigger: 'axis',
+      axisPointer: { type: 'cross', label: { backgroundColor: '#6a7985' } }
+    },
+    legend: { data: categories1 },
+    grid: { left: '3%', right: '4%', bottom: '3%', containLabel: true },
+    xAxis: [{ type: 'category', boundaryGap: false, data: ['一月', '二月', '三月', '四月', '五月', '六月', '七月'] }],
+    yAxis: [{ type: 'value' }],
+    series: [
+      { name: '人事費', type: 'line', stack: '總量', areaStyle: {}, emphasis: { focus: 'series' }, data: [320, 332, 301, 334, 390, 330, 320] },
+      { name: '業務費 1', type: 'line', stack: '總量', areaStyle: {}, emphasis: { focus: 'series' }, data: [120, 132, 101, 134, 90, 230, 210] },
+      { name: '業務費 2', type: 'line', stack: '總量', areaStyle: {}, emphasis: { focus: 'series' }, data: [220, 182, 191, 234, 290, 330, 310] },
+      { name: '國外差旅費', type: 'line', stack: '總量', areaStyle: {}, emphasis: { focus: 'series' }, data: [150, 232, 201, 154, 190, 330, 410] },
+      { name: '資本門', type: 'line', stack: '總量', areaStyle: {}, emphasis: { focus: 'series' }, data: [820, 932, 901, 934, 1290, 1330, 1320] }
+    ]
+  };
+
+  // 堆疊柱狀圖
+  const stackBar = {
+    xAxis: { data: categories1 },
+    yAxis: {},
+    series: [
+      { data: [10, 22, 28, 43, 49], type: 'bar', stack: 'x' },
+      { data: [5, 4, 3, 5, 10], type: 'bar', stack: 'x' }
+    ]
+  };
+
+  setupToggleChart(
+    'chart-run',
+    'chart-run-select',
+    {
+      '曲線趨勢分布圖': stackArea,
+      '堆疊柱狀圖': stackBar
+    },
+    '曲線趨勢分布圖'
+  );
+  window.addEventListener('resize', function () {
+    allCharts.forEach(({ chart, optionsMap, currentKey }) => {
+      const option = optionsMap[currentKey];
+      const isPie = option.series && option.series[0]?.type === 'pie';
+
+      if (isPie) {
+        const isSmallScreen = window.innerWidth < 1600;
+        chart.setOption({
+          legend: getResponsiveLegend(),
+          series: [{
+            center: isSmallScreen ? ['50%', '60%'] : ['50%', '50%'],
+            label: {
+              position: getResponsiveLabel()
+            }
+          }]
+        });
+      }
+
+      chart.resize();
+    });
+  });
+</script>
+            </div>
+        </div>
+    </body>
+</html>
