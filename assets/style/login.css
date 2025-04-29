@@ -1,0 +1,195 @@
+@charset "UTF-8";
+/*--溢出文字點點點--*/
+/*--隱藏區塊內文字--*/
+/* --漸層填色設定-- */
+html {
+  font-size: 0.9rem; }
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 100vh;
+  background: url(../images/login_img_bg@2x.png) no-repeat center;
+  background-size: cover; }
+
+.login {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
+  margin-top: 20px;
+  background-color: white;
+  border-radius: Min(2.5rem, 3vw);
+  overflow: hidden;
+  margin-inline: 1rem; }
+  @media (min-width: 768px) {
+    .login {
+      margin-top: 40px; } }
+  @media (min-width: 992px) {
+    .login {
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: row;
+              flex-direction: row; } }
+  .login .start {
+    margin-top: 30px;
+    width: 100%;
+    padding-inline: Min(7.5rem, 7vw);
+    padding-block: Min(5.5rem, 5vw); }
+    @media (min-width: 768px) {
+      .login .start {
+        margin-top: 20px; } }
+    @media (min-width: 1400px) {
+      .login .start {
+        padding-block: Min(5.5rem, 5vw);
+        margin-top: 20px; } }
+  .login .end {
+    padding: 20px 0 0 0;
+    -ms-flex-negative: 0;
+        flex-shrink: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    background-color: #4dc9c6; }
+    @media (min-width: 768px) {
+      .login .end {
+        width: 100%; } }
+    @media (min-width: 992px) {
+      .login .end {
+        width: 30%; } }
+    @media (min-width: 1200px) {
+      .login .end {
+        width: 28%; } }
+    .login .end img {
+      width: 150px;
+      margin: 0 auto -30px auto; }
+      @media (min-width: 768px) {
+        .login .end img {
+          width: 200px; } }
+      @media (min-width: 992px) {
+        .login .end img {
+          width: 250px;
+          margin-left: -30px; } }
+      @media (min-width: 1200px) {
+        .login .end img {
+          width: 300px;
+          margin-left: -15%;
+          width: 100%; } }
+  .login a {
+    text-decoration: none; }
+  .login input {
+    border-radius: 1rem;
+    padding: 0.7rem;
+    font-size: 1.25rem; }
+    @media (min-width: 576px) {
+      .login input {
+        padding: 1rem;
+        border-radius: 1.25rem; } }
+  .login .title {
+    font-weight: bold;
+    color: #505050;
+    text-align: center;
+    font-size: 1.6rem; }
+    @media (min-width: 576px) {
+      .login .title {
+        font-size: 2rem; } }
+    @media (min-width: 992px) {
+      .login .title {
+        margin-inline: 0;
+        font-size: Min(2.625rem, 5vw); } }
+    @media (min-width: 1200px) {
+      .login .title {
+        margin-inline: 0.5em; } }
+  .login .user-account,
+  .login .user-password {
+    padding-left: 4.375rem;
+    background: no-repeat left 1em center; }
+  .login .user-account {
+    background-image: url(../images/login_ic_user.svg); }
+  .login .user-password {
+    padding-right: 4.375rem;
+    background-image: url(../images/login_ic_password.svg); }
+
+.password-eye {
+  position: relative; }
+  .password-eye .icon {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    -webkit-transform: translate(-100%, -50%);
+        -ms-transform: translate(-100%, -50%);
+            transform: translate(-100%, -50%); }
+  .password-eye a {
+    position: relative; }
+    .password-eye a::before {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      content: "";
+      display: block;
+      width: 2.5rem;
+      height: 2.5rem;
+      -webkit-transform: translate(-50%, -50%);
+          -ms-transform: translate(-50%, -50%);
+              transform: translate(-50%, -50%); }
+
+.btn-login {
+  font-size: 1.5rem;
+  border-radius: 1rem;
+  padding: 0.7rem;
+  width: 100%; }
+  @media (min-width: 576px) {
+    .btn-login {
+      padding: 1rem;
+      font-size: 1.75rem;
+      border-radius: 1.25rem; } }
+
+.org-name {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 3.75rem;
+  color: white;
+  white-space: nowrap;
+  font-size: 16px;
+  margin-bottom: 3rem; }
+  @media (min-width: 576px) {
+    .org-name {
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+      font-size: 0.9rem; } }
+  .org-name .ch {
+    font-size: 20px;
+    letter-spacing: 0.125rem;
+    font-weight: bold; }
+    @media (min-width: 576px) {
+      .org-name .ch {
+        font-size: 1.1rem; } }
+
+@media (min-width: 768px) {
+  .verification {
+    height: 50px; } }
+
+/*# sourceMappingURL=login.css.map */

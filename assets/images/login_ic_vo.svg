@@ -1,0 +1,7 @@
+<svg id="login_ic_vo" xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25">
+  <rect id="長方形_196" data-name="長方形 196" width="25" height="25" rx="5" fill="#f97c0e"/>
+  <g id="volume_up_black_24dp" transform="translate(2 2)">
+    <path id="パス_95" data-name="パス 95" d="M0,0H20.552V20.552H0Z" fill="none"/>
+    <path id="パス_96" data-name="パス 96" d="M3,8.552v5.534H6.707L11.341,18.7V3.94L6.707,8.552Zm12.512,2.767A4.149,4.149,0,0,0,13.2,7.6v7.425A4.125,4.125,0,0,0,15.512,11.319ZM13.2,3.23v1.9a6.45,6.45,0,0,1,0,12.378v1.9a8.287,8.287,0,0,0,0-16.178Z" transform="translate(-1.065 -1.043)" fill="#fff"/>
+  </g>
+</svg>
