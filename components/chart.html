@@ -118,172 +118,210 @@
 
   // 建立長條圖 Option
   function createBarOption(categories, data, tooltipFormatter) {
-    return {
-      tooltip: {
-        trigger: 'item',
-        formatter: tooltipFormatter || (p => `${p.name} : ${p.value}`)
-      },
-      xAxis: { type: 'category', data: categories },
-      yAxis: { show: false },
-      series: [{ data: data, type: 'bar' }]
-    };
+      return {
+          tooltip: {
+              trigger: 'item',
+              formatter: tooltipFormatter || (p => `${p.name} : ${p.value}`)
+          },
+          xAxis: { type: 'category', data: categories },
+          yAxis: { show: false },
+          series: [{ data: data, type: 'bar', itemStyle: { color: '#678FEC' } }],
+      };
   }
 
   // 建立圓餅圖 Option
   function createPieOption(categories, data, tooltipFormatter) {
-    const isSmallScreen = window.innerWidth < 1600;
+      const isSmallScreen = window.innerWidth < 1600;
 
-    return {
-      tooltip: {
-        trigger: 'item',
-        formatter: tooltipFormatter || (p => `${p.name} : ${p.value}`)
-      },
-      series: [{
-        type: 'pie',
-        radius: '60%',
-        center: isSmallScreen ? ['50%', '60%'] : ['50%', '50%'], // 💡 自動調整圓心
-        data: categories.map((name, i) => ({
-          name: name,
-          value: data[i]
-        })),
-        label: {
-          position: getResponsiveLabel(),
-        }
-      }],
-      legend: getResponsiveLegend(),
-    };
+      return {
+          tooltip: {
+              trigger: 'item',
+              formatter: tooltipFormatter || (p => `${p.name} : ${p.value}`)
+          },
+          series: [{
+              type: 'pie',
+              radius: '60%',
+              center: isSmallScreen ? ['50%', '60%'] : ['50%', '50%'], // 💡 自動調整圓心
+              data: categories.map((name, i) => ({
+                  name: name,
+                  value: data[i]
+              })),
+              label: {
+                  position: getResponsiveLabel(),
+              }
+          }],
+          legend: getResponsiveLegend(),
+      };
   }
 
   function getResponsiveLegend() {
-    if (window.innerWidth < 1600) {
-      return {
-        orient: 'horizontal',
-        left: 'center',
-        top: 8
-      };
-    } else {
-      return {
-        orient: 'vertical',
-        left: 'left',
-        top: 0,
-        padding: [30, 0, 0, 20]
-      };
-    }
+      if (window.innerWidth < 1600) {
+          return {
+              orient: 'horizontal',
+              left: 'center',
+              top: 8
+          };
+      } else {
+          return {
+              orient: 'vertical',
+              left: 'left',
+              top: 0,
+              padding: [30, 0, 0, 20]
+          };
+      }
   }
   function getResponsiveLabel() {
-    return window.innerWidth < 500 ? 'inside' : 'outside';
+      return window.innerWidth < 500 ? 'inside' : 'outside';
   }
   // 初始化一個可由 select 切換的 ECharts
   function setupToggleChart(domId, selectId, optionsMap, defaultKey) {
-    const chart = echarts.init(document.getElementById(domId));
-    let currentKey = defaultKey;
+      const chart = echarts.init(document.getElementById(domId));
+      let currentKey = defaultKey;
 
-    chart.setOption(optionsMap[currentKey]);
-    allCharts.push({ chart, optionsMap, currentKey });
+      chart.setOption(optionsMap[currentKey]);
+      allCharts.push({ chart, optionsMap, currentKey });
 
-    document.getElementById(selectId)
-      .addEventListener('change', e => {
-        currentKey = e.target.value;
-        chart.setOption(optionsMap[currentKey], true);
-        const chartItem = allCharts.find(c => c.chart === chart);
-        if (chartItem) chartItem.currentKey = currentKey;
-      });
+      document.getElementById(selectId)
+          .addEventListener('change', e => {
+              currentKey = e.target.value;
+              chart.setOption(optionsMap[currentKey], true);
+              const chartItem = allCharts.find(c => c.chart === chart);
+              if (chartItem) chartItem.currentKey = currentKey;
+          });
   }
 
   // 第一組：分項實支 //
   const categories1 = ['人事費', '業務費 1', '業務費 2', '國外差旅費', '資本門'];
   const data1 = [12.9, 3.7, 7.71, 5, 5];
   const bar1 = createBarOption(
-    categories1, data1,
-    p => `${p.name} : ${p.value}%`
+      categories1, data1,
+      p => `${p.name} : ${p.value}%`
   );
   const pie1 = createPieOption(
-    categories1, data1,
-    p => `${p.name} : ${p.value}%`
+      categories1, data1,
+      p => `${p.name} : ${p.value}%`
   );
   setupToggleChart(
-    'chart-rate',
-    'chart-rate-select',
-    { '長條圖': bar1, '圓餅圖': pie1 },
-    '長條圖'
+      'chart-rate',
+      'chart-rate-select',
+      { '長條圖': bar1, '圓餅圖': pie1 },
+      '長條圖'
   );
 
   //  第二組：可用經費 //
   const data2 = [1094401, 342000, 590217, 120000, 36000];
   const bar2 = createBarOption(
-    categories1, data2,
-    p => `${p.name} : ${p.value.toLocaleString()}`
+      categories1, data2,
+      p => `${p.name} : ${p.value.toLocaleString()}`
   );
   const pie2 = createPieOption(
-    categories1, data2,
-    p => `${p.name} : ${p.value.toLocaleString()} (${p.percent}%)`
+      categories1, data2,
+      p => `${p.name} : ${p.value.toLocaleString()} (${p.percent}%)`
   );
   setupToggleChart(
-    'chart-fund',
-    'chart-fund-select',
-    { '長條圖': bar2, '圓餅圖': pie2 },
-    '圓餅圖'
+      'chart-fund',
+      'chart-fund-select',
+      { '長條圖': bar2, '圓餅圖': pie2 },
+      '圓餅圖'
   );
 
   //  第三組：每月趨勢 vs 堆疊柱狀  //
   // 曲線趨勢分布
   const stackArea = {
-    tooltip: {
-      trigger: 'axis',
-      axisPointer: { type: 'cross', label: { backgroundColor: '#6a7985' } }
-    },
-    legend: { data: categories1 },
-    grid: { left: '3%', right: '4%', bottom: '3%', containLabel: true },
-    xAxis: [{ type: 'category', boundaryGap: false, data: ['一月', '二月', '三月', '四月', '五月', '六月', '七月'] }],
-    yAxis: [{ type: 'value' }],
-    series: [
-      { name: '人事費', type: 'line', stack: '總量', areaStyle: {}, emphasis: { focus: 'series' }, data: [320, 332, 301, 334, 390, 330, 320] },
-      { name: '業務費 1', type: 'line', stack: '總量', areaStyle: {}, emphasis: { focus: 'series' }, data: [120, 132, 101, 134, 90, 230, 210] },
-      { name: '業務費 2', type: 'line', stack: '總量', areaStyle: {}, emphasis: { focus: 'series' }, data: [220, 182, 191, 234, 290, 330, 310] },
-      { name: '國外差旅費', type: 'line', stack: '總量', areaStyle: {}, emphasis: { focus: 'series' }, data: [150, 232, 201, 154, 190, 330, 410] },
-      { name: '資本門', type: 'line', stack: '總量', areaStyle: {}, emphasis: { focus: 'series' }, data: [820, 932, 901, 934, 1290, 1330, 1320] }
-    ]
+      tooltip: {
+          trigger: 'axis',
+          axisPointer: { type: 'cross', label: { backgroundColor: '#6a7985' } }
+      },
+      legend: { data: categories1 },
+      grid: { left: '3%', right: '4%', bottom: '3%', containLabel: true },
+      xAxis: [{ type: 'category', boundaryGap: false, data: ['一月', '二月', '三月', '四月', '五月', '六月', '七月'] }],
+      yAxis: [{ type: 'value' }],
+      series: [
+          { name: '人事費', type: 'line', stack: '總量', areaStyle: {}, emphasis: { focus: 'series' }, data: [320, 332, 301, 334, 390, 330, 320] },
+          { name: '業務費 1', type: 'line', stack: '總量', areaStyle: {}, emphasis: { focus: 'series' }, data: [120, 132, 101, 134, 90, 230, 210] },
+          { name: '業務費 2', type: 'line', stack: '總量', areaStyle: {}, emphasis: { focus: 'series' }, data: [220, 182, 191, 234, 290, 330, 310] },
+          { name: '國外差旅費', type: 'line', stack: '總量', areaStyle: {}, emphasis: { focus: 'series' }, data: [150, 232, 201, 154, 190, 330, 410] },
+          { name: '資本門', type: 'line', stack: '總量', areaStyle: {}, emphasis: { focus: 'series' }, data: [820, 932, 901, 934, 1290, 1330, 1320] }
+      ]
   };
 
   // 堆疊柱狀圖
   const stackBar = {
-    xAxis: { data: categories1 },
-    yAxis: {},
-    series: [
-      { data: [10, 22, 28, 43, 49], type: 'bar', stack: 'x' },
-      { data: [5, 4, 3, 5, 10], type: 'bar', stack: 'x' }
-    ]
+      grid: {
+  containLabel: true,
+  left: '5%', 
+},
+      legend: { data: categories1 },
+      xAxis: { data: categories1 },
+      yAxis: {},
+      series: [
+          {
+              name: '人事費',
+              type: 'bar',
+              stack: '總支出',
+              itemStyle: { color: '#FF6B6B' },
+              data: [1256500, 1100000, 1230000, 1280000, 1300000, 1200000]
+          },
+          {
+              name: '業務費 1',
+              type: 'bar',
+              stack: '總支出',
+              itemStyle: { color: '#33C1C9' },
+              data: [354000, 360000, 370000, 390000, 400000, 410000]
+          },
+          {
+              name: '業務費 2',
+              type: 'bar',
+              stack: '總支出',
+              itemStyle: { color: '#FFB638' },
+              data: [642000, 600000, 590000, 610000, 630000, 620000]
+          },
+          {
+              name: '國外差旅費',
+              type: 'bar',
+              stack: '總支出',
+              itemStyle: { color: '#2C6DD2' },
+              data: [120000, 130000, 140000, 120000, 125000, 110000]
+          },
+          {
+              name: '資本門',
+              type: 'bar',
+              stack: '總支出',
+              itemStyle: { color: '#28B44A' },
+              data: [295000, 300000, 310000, 320000, 330000, 340000]
+          }
+      ]
   };
 
   setupToggleChart(
-    'chart-run',
-    'chart-run-select',
-    {
-      '曲線趨勢分布圖': stackArea,
-      '堆疊柱狀圖': stackBar
-    },
-    '曲線趨勢分布圖'
+      'chart-run',
+      'chart-run-select',
+      {
+          '曲線趨勢分布圖': stackArea,
+          '堆疊柱狀圖': stackBar
+      },
+      '曲線趨勢分布圖'
   );
   window.addEventListener('resize', function () {
-    allCharts.forEach(({ chart, optionsMap, currentKey }) => {
-      const option = optionsMap[currentKey];
-      const isPie = option.series && option.series[0]?.type === 'pie';
+      allCharts.forEach(({ chart, optionsMap, currentKey }) => {
+          const option = optionsMap[currentKey];
+          const isPie = option.series && option.series[0]?.type === 'pie';
 
-      if (isPie) {
-        const isSmallScreen = window.innerWidth < 1600;
-        chart.setOption({
-          legend: getResponsiveLegend(),
-          series: [{
-            center: isSmallScreen ? ['50%', '60%'] : ['50%', '50%'],
-            label: {
-              position: getResponsiveLabel()
-            }
-          }]
-        });
-      }
+          if (isPie) {
+              const isSmallScreen = window.innerWidth < 1600;
+              chart.setOption({
+                  legend: getResponsiveLegend(),
+                  series: [{
+                      center: isSmallScreen ? ['50%', '60%'] : ['50%', '50%'],
+                      label: {
+                          position: getResponsiveLabel()
+                      }
+                  }]
+              });
+          }
 
-      chart.resize();
-    });
+          chart.resize();
+      });
   });
 </script>
             </div>
