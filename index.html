@@ -718,7 +718,7 @@
                             </div>
                         </div>
                         <div class="col-md-6 col-lg-12 col-xl-6">
-                            <div class="chart-header bg-blue">
+                            <div class="chart-header bg-teal">
                                 <p>尚可用經費</p>
                                 <label for="chart-fund-select" class="form-label mb-0 visually-hidden">圖表</label>
                                 <select class="form-select" id="chart-fund-select">
@@ -731,7 +731,7 @@
                             </div>
                         </div>
                         <div class="col-md-6 col-lg-12 col-xl-6">
-                            <div class="chart-header bg-blue">
+                            <div class="chart-header bg-teal">
                                 <p>尚可用經費數據</p>
                             </div>
                             <div class="light-container rounded-top-0">
@@ -766,7 +766,7 @@
                             </div>
                         </div>
                         <div class="col-12">
-                            <div class="chart-header bg-blue">
+                            <div class="chart-header bg-purple-xdark">
                                 <p>每月執行比重</p>
                                 <label for="chart-run-select" class="form-label mb-0 visually-hidden">圖表</label>
                                 <select class="form-select" id="chart-run-select">
@@ -796,34 +796,34 @@
             },
             xAxis: { type: 'category', data: categories },
             yAxis: { show: false },
-            series: [{ data: data, type: 'bar' }]
+            series: [{ data: data, type: 'bar', itemStyle: { color: '#678FEC' } }],
         };
     }
 
     // 建立圓餅圖 Option
     function createPieOption(categories, data, tooltipFormatter) {
-            const isSmallScreen = window.innerWidth < 1600;
+        const isSmallScreen = window.innerWidth < 1600;
 
-            return {
-                tooltip: {
-                    trigger: 'item',
-                    formatter: tooltipFormatter || (p => `${p.name} : ${p.value}`)
-                },
-                series: [{
-                    type: 'pie',
-                    radius: '60%',
-                    center: isSmallScreen ? ['50%', '60%'] : ['50%', '50%'], // 💡 自動調整圓心
-                    data: categories.map((name, i) => ({
-                        name: name,
-                        value: data[i]
-                    })),
-                    label: {
-                        position: getResponsiveLabel(),
-                    }
-                }],
-                legend: getResponsiveLegend(),
-            };
-        }
+        return {
+            tooltip: {
+                trigger: 'item',
+                formatter: tooltipFormatter || (p => `${p.name} : ${p.value}`)
+            },
+            series: [{
+                type: 'pie',
+                radius: '60%',
+                center: isSmallScreen ? ['50%', '60%'] : ['50%', '50%'], // 💡 自動調整圓心
+                data: categories.map((name, i) => ({
+                    name: name,
+                    value: data[i]
+                })),
+                label: {
+                    position: getResponsiveLabel(),
+                }
+            }],
+            legend: getResponsiveLegend(),
+        };
+    }
 
     function getResponsiveLegend() {
         if (window.innerWidth < 1600) {
@@ -841,25 +841,25 @@
             };
         }
     }
-        function getResponsiveLabel() {
-                return window.innerWidth < 500 ? 'inside' : 'outside';
-            }
+    function getResponsiveLabel() {
+        return window.innerWidth < 500 ? 'inside' : 'outside';
+    }
     // 初始化一個可由 select 切換的 ECharts
     function setupToggleChart(domId, selectId, optionsMap, defaultKey) {
-            const chart = echarts.init(document.getElementById(domId));
-            let currentKey = defaultKey;
+        const chart = echarts.init(document.getElementById(domId));
+        let currentKey = defaultKey;
 
-            chart.setOption(optionsMap[currentKey]);
-            allCharts.push({ chart, optionsMap, currentKey });
+        chart.setOption(optionsMap[currentKey]);
+        allCharts.push({ chart, optionsMap, currentKey });
 
-            document.getElementById(selectId)
-                .addEventListener('change', e => {
-                    currentKey = e.target.value;
-                    chart.setOption(optionsMap[currentKey], true);
-                    const chartItem = allCharts.find(c => c.chart === chart);
-                    if (chartItem) chartItem.currentKey = currentKey;
-                });
-        }
+        document.getElementById(selectId)
+            .addEventListener('change', e => {
+                currentKey = e.target.value;
+                chart.setOption(optionsMap[currentKey], true);
+                const chartItem = allCharts.find(c => c.chart === chart);
+                if (chartItem) chartItem.currentKey = currentKey;
+            });
+    }
 
     // 第一組：分項實支 //
     const categories1 = ['人事費', '業務費 1', '業務費 2', '國外差旅費', '資本門'];
@@ -918,11 +918,49 @@
 
     // 堆疊柱狀圖
     const stackBar = {
+        grid: {
+    containLabel: true,
+    left: '5%', 
+  },
+        legend: { data: categories1 },
         xAxis: { data: categories1 },
         yAxis: {},
         series: [
-            { data: [10, 22, 28, 43, 49], type: 'bar', stack: 'x' },
-            { data: [5, 4, 3, 5, 10], type: 'bar', stack: 'x' }
+            {
+                name: '人事費',
+                type: 'bar',
+                stack: '總支出',
+                itemStyle: { color: '#FF6B6B' },
+                data: [1256500, 1100000, 1230000, 1280000, 1300000, 1200000]
+            },
+            {
+                name: '業務費 1',
+                type: 'bar',
+                stack: '總支出',
+                itemStyle: { color: '#33C1C9' },
+                data: [354000, 360000, 370000, 390000, 400000, 410000]
+            },
+            {
+                name: '業務費 2',
+                type: 'bar',
+                stack: '總支出',
+                itemStyle: { color: '#FFB638' },
+                data: [642000, 600000, 590000, 610000, 630000, 620000]
+            },
+            {
+                name: '國外差旅費',
+                type: 'bar',
+                stack: '總支出',
+                itemStyle: { color: '#2C6DD2' },
+                data: [120000, 130000, 140000, 120000, 125000, 110000]
+            },
+            {
+                name: '資本門',
+                type: 'bar',
+                stack: '總支出',
+                itemStyle: { color: '#28B44A' },
+                data: [295000, 300000, 310000, 320000, 330000, 340000]
+            }
         ]
     };
 
@@ -936,26 +974,26 @@
         '曲線趨勢分布圖'
     );
     window.addEventListener('resize', function () {
-            allCharts.forEach(({ chart, optionsMap, currentKey }) => {
-                const option = optionsMap[currentKey];
-                const isPie = option.series && option.series[0]?.type === 'pie';
+        allCharts.forEach(({ chart, optionsMap, currentKey }) => {
+            const option = optionsMap[currentKey];
+            const isPie = option.series && option.series[0]?.type === 'pie';
 
-                if (isPie) {
-                    const isSmallScreen = window.innerWidth < 1600;
-                    chart.setOption({
-                        legend: getResponsiveLegend(),
-                        series: [{
-                            center: isSmallScreen ? ['50%', '60%'] : ['50%', '50%'],
-                            label: {
-                                position: getResponsiveLabel()
-                            }
-                        }]
-                    });
-                }
+            if (isPie) {
+                const isSmallScreen = window.innerWidth < 1600;
+                chart.setOption({
+                    legend: getResponsiveLegend(),
+                    series: [{
+                        center: isSmallScreen ? ['50%', '60%'] : ['50%', '50%'],
+                        label: {
+                            position: getResponsiveLabel()
+                        }
+                    }]
+                });
+            }
 
-                chart.resize();
-            });
+            chart.resize();
         });
+    });
 </script>
 				</main>
 			</div>
