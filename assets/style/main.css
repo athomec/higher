@@ -2847,6 +2847,12 @@ select + .footable-toggle, input + .footable-toggle {
 .bg-grey-light {
   background-color: #FCFBFB !important; }
 
+.bg-teal {
+  background-color: #039595 !important; }
+
+.bg-purple-xdark {
+  background-color: #927FE2 !important; }
+
 .fs-15 {
   font-size: 0.9375rem !important; }
 
